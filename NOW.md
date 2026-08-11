@@ -4,7 +4,7 @@ Updated: 2026-08-11
 
 ## Workspace
 
-Threading is the reusable core extracted from a private academic workspace. It is intended for peers with different project contexts but similar needs around research organisation, evidence traceability, methods, design iteration and writing. An independent GSA Pack is available as an optional Design Innovation academic context.
+Threading is an Agent-native, evidence-led Research and Design project workflow. Its reusable core was extracted from a private academic workspace and is intended for projects with different contexts but similar needs around research organisation, evidence traceability, methods, design iteration and writing. An independent GSA Pack is available as an optional Design Innovation academic context.
 
 Current status: **v0.2 Managed Workspace implementation with an installable
 Threading skill, Current State, linked GSA Pack, existing-chat reconciliation

@@ -2,29 +2,30 @@
 
 [English version →](README.en.md)
 
-> Threading 是一个运行在本地 Codex Agent 上的 research、design 和 academic
-> project workspace。它把分散在 Figma、本地文件夹和聊天记录里的项目材料，整理成
-> 一条可以持续工作的知识链：`Sources → Evidence → Decisions → Prototypes →
-> Testing → Writing`。
+> **Threading 是一个面向 Research and Design 的 Agent-native、evidence-led 项目工作流。**
+> 它可以从项目早期开始，也可以陪伴完整生命周期，或在项目形成后接入；工作链路是
+> `Question → Sources → Evidence → Insight → Decision → Prototype → Testing → Outcome`。
 
-Threading 的重点是让 Agent 快速理解一个已有项目，并让项目 owner 持续确认：
-现在的方向是什么、哪些内容有证据、下一步要做什么。
+它把问题、来源、证据、洞察、决策、原型、测试和输出连接起来，让一个 project
+逐步形成可解释、可交付、可继续迭代的成果。
 
 ## 一眼看懂
 
 ```mermaid
 flowchart LR
-    A[Project sources<br/>Figma · files · chat] --> B[Threading Workspace]
-    B --> C[Current State]
-    B --> D[Evidence & decisions]
-    C --> E[Prototype · testing · writing]
-    D --> E
+    A[Start a project] --> B[Threading workflow]
+    A2[Join an existing project] --> B
+    A3[Continue a project] --> B
+    B --> C[Question & sources]
+    C --> D[Evidence & insight]
+    D --> E[Decision & criteria]
+    E --> F[Prototype · testing · outcome]
     G[GSA Pack<br/>optional] -.-> B
 ```
 
 | 层级 | 作用 |
 | --- | --- |
-| Project sources | 原始 Figma、文件、PDF、图片和聊天记录，继续由用户在原位置管理 |
+| Project workflow | 从问题和目标推进到 evidence、decision、prototype、testing 和 outcome |
 | Managed Workspace | 保存 source pointers、Current State、derived knowledge、evidence、decisions 和 outputs |
 | Threading core | 提供规则、模板、工具、Dashboard 和可安装 Skill |
 | GSA Pack | 可选的、linked read-only 的 Design Innovation academic pack |
@@ -48,7 +49,10 @@ tests/             automated checks
 
 ## 你可以用 Threading 做什么
 
-- 接管一个已经存在、但材料分散的项目；
+- 从零建立一个 research、service design、product design 或 academic project；
+- 在项目早期建立问题、来源和证据推进方式；
+- 在项目形成后接入并整理已有的 Figma、文件夹和聊天记录；
+- 持续维护一个已经运行中的 project workflow；
 - 从最近的 Figma 版本提出 current candidate，再由你确认 `CURRENT.md`；
 - 整理已经导入的 ChatGPT Markdown，保留原始记录并把候选内容分层 review；
 - 把 evidence、interpretation、decision、prototype 和 testing 连起来；
@@ -65,8 +69,15 @@ cd Threading
 python3 90_scripts_tools/threading/install_skill.py
 ```
 
-然后在 Codex Agent 中说：`帮我接管这个现有项目`。按引导提供项目名称、材料位置和
-需要使用的来源；原始材料继续留在原位置。
+然后在 Codex Agent 中选择一个入口：
+
+```text
+帮我新建一个项目空间
+帮我接管这个现有项目
+继续推进这个项目
+```
+
+按引导提供项目名称、项目阶段、目标和需要使用的来源；原始材料继续留在原位置。
 
 更新到 GitHub 最新版本：
 
@@ -80,8 +91,8 @@ git pull --ff-only origin main
 python3 90_scripts_tools/threading/update_threading.py
 ```
 
-日常工作可以直接说：`Dashboard`、`整理已经导入的聊天记录`、`帮我整理 Figma 的演变`、
-`加载 GSA Pack` 或 `Update Threading`。
+日常工作可以直接说：`Dashboard`、`帮我找出当前方向`、`整理已经导入的聊天记录`、
+`帮我整理 Figma 的演变`、`帮我找出 evidence gaps`、`加载 GSA Pack` 或 `Update Threading`。
 
 完整 onboarding 和旧版本升级说明见 [QUICKSTART](docs/QUICKSTART.md) 与
 [EXISTING_USER_UPGRADE](docs/EXISTING_USER_UPGRADE.md)。

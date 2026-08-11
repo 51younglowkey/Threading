@@ -1,13 +1,13 @@
 # Threading File Index
 
-Generated: 2026-08-11 22:50
+Generated: 2026-08-12 00:17
 
 | File path | File type | Likely role | Project / sub-project | Last modified |
 |---|---|---|---|---|
 | `.gitattributes` | directory/no extension | Working file | Threading | 2026-08-11 18:43 |
 | `.gitignore` | directory/no extension | Working file | Threading | 2026-08-11 22:28 |
 | `90_scripts_tools/file_backup_tools/backup_file.py` | py | Working file | Scripts / tools | 2026-08-11 18:43 |
-| `90_scripts_tools/markdown_indexing/build_file_index.py` | py | Working file | Scripts / tools | 2026-08-11 22:48 |
+| `90_scripts_tools/markdown_indexing/build_file_index.py` | py | Working file | Scripts / tools | 2026-08-11 22:52 |
 | `90_scripts_tools/pdf_method_index/README.md` | md | Working file | Scripts / tools | 2026-08-11 22:28 |
 | `90_scripts_tools/pdf_method_index/build_week_pdf_index.py` | py | Working file | Scripts / tools | 2026-08-11 18:43 |
 | `90_scripts_tools/pdf_method_index/query_week_pdf_index.py` | py | Working file | Scripts / tools | 2026-08-11 18:43 |
@@ -24,52 +24,52 @@ Generated: 2026-08-11 22:50
 | `90_scripts_tools/threading/doctor.py` | py | Working file | Scripts / tools | 2026-08-11 22:28 |
 | `90_scripts_tools/threading/install_skill.py` | py | Working file | Scripts / tools | 2026-08-11 22:28 |
 | `90_scripts_tools/threading/update_threading.py` | py | Working file | Scripts / tools | 2026-08-11 22:28 |
-| `AGENTS.md` | md | Working file | Threading | 2026-08-11 22:48 |
-| `CLAUDE.md` | md | Working file | Threading | 2026-08-11 22:48 |
-| `DASHBOARD.md` | md | Working file | Threading | 2026-08-11 22:28 |
+| `AGENTS.md` | md | Working file | Threading | 2026-08-12 00:16 |
+| `CLAUDE.md` | md | Working file | Threading | 2026-08-12 00:16 |
+| `DASHBOARD.md` | md | Working file | Threading | 2026-08-12 00:16 |
 | `LICENSE` | directory/no extension | Working file | Threading | 2026-08-11 18:43 |
-| `NOW.md` | md | Working file | Threading | 2026-08-11 22:48 |
-| `README.en.md` | md | Working file | Threading | 2026-08-11 22:50 |
-| `README.md` | md | Working file | Threading | 2026-08-11 22:50 |
+| `NOW.md` | md | Working file | Threading | 2026-08-12 00:16 |
+| `README.en.md` | md | Working file | Threading | 2026-08-12 00:13 |
+| `README.md` | md | Working file | Threading | 2026-08-12 00:13 |
 | `VERSION` | directory/no extension | Working file | Threading | 2026-08-11 22:28 |
-| `core/skill_library/README.md` | md | Working file | Threading | 2026-08-11 22:28 |
-| `core/skill_library/frontdesk/dialogue_scope_current.md` | md | Log | Threading | 2026-08-11 22:28 |
-| `core/skill_library/frontdesk/frontdesk_framework_fix_mode.md` | md | Working file | Threading | 2026-08-11 22:48 |
-| `core/skill_library/skill_index.md` | md | Working file | Threading | 2026-08-11 22:28 |
-| `core/skill_library/skills/apply-taught-methods/SKILL.md` | md | Working file | Threading | 2026-08-11 18:43 |
-| `core/skill_library/skills/apply-taught-methods/agents/openai.yaml` | yaml | Working file | Threading | 2026-08-11 18:43 |
-| `core/skill_library/skills/evidence_chain_discipline.md` | md | Evidence chain record | Threading | 2026-08-11 18:43 |
-| `core/skill_library/skills/retrospective_warning_system.md` | md | Working file | Threading | 2026-08-11 18:43 |
-| `core/skill_library/skills/threading-dashboard/SKILL.md` | md | Working file | Threading | 2026-08-11 22:28 |
-| `core/skill_library/templates/skill_template.md` | md | Template | Threading | 2026-08-11 18:43 |
-| `core/system_context/EXTRACTION_STATUS.md` | md | Working file | System context | 2026-08-11 22:30 |
-| `core/system_context/file_index.md` | md | Working file | System context | 2026-08-11 22:49 |
-| `core/system_context/repository_architecture.md` | md | Working file | System context | 2026-08-11 22:50 |
-| `core/system_context/workflow_rules.md` | md | Working file | System context | 2026-08-11 22:28 |
-| `core/templates/consent_form_template.md` | md | Template | Template library | 2026-08-11 18:43 |
-| `core/templates/evidence_record_template.md` | md | Template | Template library | 2026-08-11 18:43 |
-| `core/templates/interview_note_template.md` | md | Template | Template library | 2026-08-11 18:43 |
-| `core/templates/learning_outcome_audit_template.md` | md | Template | Template library | 2026-08-11 18:43 |
-| `core/templates/literature_review_note_template.md` | md | Template | Template library | 2026-08-11 18:43 |
-| `core/templates/prototype_testing_record_template.md` | md | Template | Template library | 2026-08-11 18:43 |
-| `core/templates/reading_note_template.md` | md | Template | Template library | 2026-08-11 18:43 |
-| `core/templates/tutorial_note_template.md` | md | Template | Template library | 2026-08-11 18:43 |
-| `core/templates/weekly_progress_log_template.md` | md | Template | Template library | 2026-08-11 18:43 |
-| `docs/AGENT_ONBOARDING.md` | md | Working file | Threading | 2026-08-11 22:28 |
-| `docs/CAPABILITIES.md` | md | Working file | Threading | 2026-08-11 22:28 |
-| `docs/CHANGELOG.md` | md | Log | Threading | 2026-08-11 22:28 |
+| `core/skill_library/README.md` | md | Working file | Threading | 2026-08-11 22:52 |
+| `core/skill_library/frontdesk/dialogue_scope_current.md` | md | Log | Threading | 2026-08-11 22:52 |
+| `core/skill_library/frontdesk/frontdesk_framework_fix_mode.md` | md | Working file | Threading | 2026-08-11 22:52 |
+| `core/skill_library/skill_index.md` | md | Working file | Threading | 2026-08-11 22:52 |
+| `core/skill_library/skills/apply-taught-methods/SKILL.md` | md | Working file | Threading | 2026-08-11 22:52 |
+| `core/skill_library/skills/apply-taught-methods/agents/openai.yaml` | yaml | Working file | Threading | 2026-08-11 22:52 |
+| `core/skill_library/skills/evidence_chain_discipline.md` | md | Evidence chain record | Threading | 2026-08-11 22:52 |
+| `core/skill_library/skills/retrospective_warning_system.md` | md | Working file | Threading | 2026-08-11 22:52 |
+| `core/skill_library/skills/threading-dashboard/SKILL.md` | md | Working file | Threading | 2026-08-11 22:52 |
+| `core/skill_library/templates/skill_template.md` | md | Template | Threading | 2026-08-11 22:52 |
+| `core/system_context/EXTRACTION_STATUS.md` | md | Working file | System context | 2026-08-11 22:52 |
+| `core/system_context/file_index.md` | md | Working file | System context | 2026-08-11 22:52 |
+| `core/system_context/repository_architecture.md` | md | Working file | System context | 2026-08-12 00:16 |
+| `core/system_context/workflow_rules.md` | md | Working file | System context | 2026-08-11 22:52 |
+| `core/templates/consent_form_template.md` | md | Template | Template library | 2026-08-11 22:52 |
+| `core/templates/evidence_record_template.md` | md | Template | Template library | 2026-08-11 22:52 |
+| `core/templates/interview_note_template.md` | md | Template | Template library | 2026-08-11 22:52 |
+| `core/templates/learning_outcome_audit_template.md` | md | Template | Template library | 2026-08-11 22:52 |
+| `core/templates/literature_review_note_template.md` | md | Template | Template library | 2026-08-11 22:52 |
+| `core/templates/prototype_testing_record_template.md` | md | Template | Template library | 2026-08-11 22:52 |
+| `core/templates/reading_note_template.md` | md | Template | Template library | 2026-08-11 22:52 |
+| `core/templates/tutorial_note_template.md` | md | Template | Template library | 2026-08-11 22:52 |
+| `core/templates/weekly_progress_log_template.md` | md | Template | Template library | 2026-08-11 22:52 |
+| `docs/AGENT_ONBOARDING.md` | md | Working file | Threading | 2026-08-12 00:15 |
+| `docs/CAPABILITIES.md` | md | Working file | Threading | 2026-08-12 00:15 |
+| `docs/CHANGELOG.md` | md | Log | Threading | 2026-08-11 22:52 |
 | `docs/CHAT_RECONCILIATION.md` | md | Working file | Threading | 2026-08-11 22:28 |
 | `docs/EXISTING_USER_UPGRADE.md` | md | Working file | Threading | 2026-08-11 22:28 |
 | `docs/FIGMA_EVOLUTION.md` | md | Working file | Threading | 2026-08-11 22:28 |
-| `docs/LICENSE-DOCS.md` | md | Working file | Threading | 2026-08-11 18:43 |
-| `docs/NOTICE.md` | md | Working file | Threading | 2026-08-11 18:43 |
-| `docs/PROVENANCE_AND_LICENSING.md` | md | Working file | Threading | 2026-08-11 22:50 |
+| `docs/LICENSE-DOCS.md` | md | Working file | Threading | 2026-08-11 22:52 |
+| `docs/NOTICE.md` | md | Working file | Threading | 2026-08-11 22:52 |
+| `docs/PROVENANCE_AND_LICENSING.md` | md | Working file | Threading | 2026-08-11 22:52 |
 | `docs/PUBLICATION_CHECKLIST.md` | md | Checklist | Threading | 2026-08-11 22:30 |
-| `docs/QUICKSTART.md` | md | Working file | Threading | 2026-08-11 22:28 |
-| `docs/THIRD_PARTY_NOTICES.md` | md | Working file | Threading | 2026-08-11 18:43 |
+| `docs/QUICKSTART.md` | md | Working file | Threading | 2026-08-12 00:16 |
+| `docs/THIRD_PARTY_NOTICES.md` | md | Working file | Threading | 2026-08-11 22:52 |
 | `docs/UPDATING.md` | md | Working file | Threading | 2026-08-11 22:28 |
 | `examples/minimal-project/README.md` | md | Working file | Threading | 2026-08-11 22:28 |
-| `packs/gsa/PACK.md` | md | Working file | Threading | 2026-08-11 22:50 |
+| `packs/gsa/PACK.md` | md | Working file | Threading | 2026-08-11 22:52 |
 | `packs/gsa/README.md` | md | Working file | Threading | 2026-08-11 22:28 |
 | `packs/gsa/VERSION` | directory/no extension | Working file | Threading | 2026-08-11 22:28 |
 | `packs/gsa/assessment/stage3-assessment-guide.md` | md | Working file | Threading | 2026-08-11 18:43 |
@@ -101,8 +101,8 @@ Generated: 2026-08-11 22:50
 | `projects/_template/sources/local-files/README.md` | md | Working file | Threading | 2026-08-11 22:28 |
 | `projects/_template/sources/source_registry.md` | md | Working file | Threading | 2026-08-11 22:28 |
 | `projects/_template/threading.json` | json | Working file | Threading | 2026-08-11 22:28 |
-| `skills/threading/SKILL.md` | md | Working file | Threading | 2026-08-11 22:28 |
+| `skills/threading/SKILL.md` | md | Working file | Threading | 2026-08-12 00:15 |
 | `skills/threading/agents/openai.yaml` | yaml | Working file | Threading | 2026-08-11 22:28 |
-| `skills/threading/references/routes.md` | md | Working file | Threading | 2026-08-11 22:28 |
+| `skills/threading/references/routes.md` | md | Working file | Threading | 2026-08-12 00:15 |
 | `skills/threading/references/workspace-schema.md` | md | Working file | Threading | 2026-08-11 22:28 |
 | `tests/test_workspace_tools.py` | py | Working file | Threading | 2026-08-11 22:28 |

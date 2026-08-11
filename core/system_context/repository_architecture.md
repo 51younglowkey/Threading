@@ -19,9 +19,9 @@ Public Threading core
                               Figma / local folders / chat archives
 ```
 
-The complete product is the Threading repository plus a user-owned Managed
-Workspace. The standalone skill is an access and routing layer, not project
-storage.
+The complete product is the Threading project workflow, implemented through the
+repository core plus a user-owned Managed Workspace. The standalone skill is an
+access and routing layer, while the local workspace holds the project instance.
 
 ## Current and history
 

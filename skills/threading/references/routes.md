@@ -4,15 +4,32 @@
 
 Explain in plain language that Threading can:
 
-1. adopt an existing complex project;
-2. identify and confirm its current working state;
-3. organise derived knowledge from Figma, local files and chat archives;
-4. trace evidence, decisions, prototypes, tests and iterations;
-5. use an explicitly enabled GSA Pack for methods, Provotyping, Reflection
+1. start a Research and Design project from a question, brief or goal;
+2. accompany the project through framing, evidence, decisions, prototypes,
+   testing, iteration and outcome;
+3. join an existing complex project and preserve its history;
+4. identify and confirm its current working state;
+5. organise derived knowledge from Figma, local files and chat archives;
+6. trace evidence, decisions, prototypes, tests and iterations;
+7. use an explicitly enabled GSA Pack for methods, Provotyping, Reflection
    Document analysis and Stage 3 audit;
-6. show one evidence-supported next move.
+8. show one evidence-supported next move.
 
-End with one useful prompt: `帮我接管这个现有项目`.
+End with one useful prompt chosen from the situation: `帮我新建一个项目空间`,
+`帮我接管这个现有项目` or `继续推进这个项目`.
+
+## New-project start
+
+1. Confirm the project title, slug, type and intended outcome.
+2. Ask for the minimum working question and current uncertainty; do not demand
+   a polished brief.
+3. Ask whether the project is Research, Service Design, Product Design or another
+   Research and Design context.
+4. Create or select a Managed Workspace under `projects/local/`.
+5. Start a source map and evidence plan without requiring source files yet.
+6. Propose the first Current State and one next move.
+7. Ask for confirmation before writing the proposal as the authoritative
+   `CURRENT.md`.
 
 ## Existing-project adoption
 
@@ -30,6 +47,16 @@ End with one useful prompt: `帮我接管这个现有项目`.
 Use `90_scripts_tools/project_workspace/adopt_project.py` for deterministic
 workspace creation. It creates structure and pointers only; it does not inspect
 or copy raw sources.
+
+## Continue a project
+
+1. Read the selected workspace's nested `AGENTS.md`, `CURRENT.md`, `packs.md`
+   and bounded records.
+2. Render the Dashboard and state what is confirmed, candidate, superseded or
+   missing.
+3. Ask which workstream to continue: evidence, decisions, prototype, testing,
+   writing or project handover.
+4. Propose one next move with its source or confirmation requirement.
 
 ## Figma evolution
 

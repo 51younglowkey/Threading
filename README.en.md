@@ -2,29 +2,31 @@
 
 [中文版 →](README.md)
 
-> Threading is a local Codex Agent workspace for research, design and academic
-> projects. It turns material spread across Figma, local folders and chat
-> exports into a working chain: `Sources → Evidence → Decisions → Prototypes →
-> Testing → Writing`.
+> **Threading is an Agent-native, evidence-led project workflow for Research and Design.**
+> It can enter at the beginning of a project, accompany its full lifecycle, or join
+> a project that already has substantial material: `Question → Sources → Evidence
+> → Insight → Decision → Prototype → Testing → Outcome`.
 
-Threading helps an Agent understand an existing project quickly while the owner
-keeps confirming what is current, what is supported and what should happen next.
+It connects project questions, sources, evidence, insights, decisions, prototypes,
+tests and outputs so a project can become explainable, deliverable and iterable.
 
 ## At a glance
 
 ```mermaid
 flowchart LR
-    A[Project sources<br/>Figma · files · chat] --> B[Threading Workspace]
-    B --> C[Current State]
-    B --> D[Evidence & decisions]
-    C --> E[Prototype · testing · writing]
-    D --> E
+    A[Start a project] --> B[Threading workflow]
+    A2[Join an existing project] --> B
+    A3[Continue a project] --> B
+    B --> C[Question & sources]
+    C --> D[Evidence & insight]
+    D --> E[Decision & criteria]
+    E --> F[Prototype · testing · outcome]
     G[GSA Pack<br/>optional] -.-> B
 ```
 
 | Layer | Role |
 | --- | --- |
-| Project sources | Original Figma, files, PDFs, images and chat records remain user-controlled |
+| Project workflow | Moves from questions and goals to evidence, decisions, prototypes, testing and outcomes |
 | Managed Workspace | Stores source pointers, Current State, derived knowledge, evidence, decisions and outputs |
 | Threading core | Provides rules, templates, tools, Dashboard and an installable Skill |
 | GSA Pack | An optional linked, read-only Design Innovation academic pack |
@@ -49,7 +51,10 @@ GitHub landing page stays short and legible.
 
 ## What Threading helps with
 
-- adopt an existing project whose material is spread across several places;
+- start a research, service design, product design or academic project from scratch;
+- establish questions, sources and an evidence-led way of progressing early work;
+- join a project that already has Figma, local files or chat history;
+- continue a project workflow across its lifecycle;
 - propose a current Figma candidate for owner confirmation;
 - reconcile imported ChatGPT Markdown while preserving the raw archive;
 - connect evidence, interpretation, decisions, prototypes and testing;
@@ -66,8 +71,15 @@ cd Threading
 python3 90_scripts_tools/threading/install_skill.py
 ```
 
-Then open the repository in Codex Agent and say: `adopt this existing project`.
-Provide the project title, material locations and the sources you want to use;
+Then open the repository in Codex Agent and choose an entry point:
+
+```text
+start a new project
+adopt this existing project
+continue this project
+```
+
+Provide the project title, project phase, goals and the sources you want to use;
 original material stays in its source location.
 
 Update to the latest GitHub version:
@@ -82,8 +94,9 @@ For a safe update check, run:
 python3 90_scripts_tools/threading/update_threading.py
 ```
 
-Useful everyday prompts include `Dashboard`, `reconcile chat archive`, `map Figma`,
-`load GSA Pack` and `Update Threading`.
+Useful everyday prompts include `Dashboard`, `find the current direction`,
+`reconcile chat archive`, `map Figma`, `find the evidence gaps`, `load GSA Pack`
+and `Update Threading`.
 
 See [QUICKSTART](docs/QUICKSTART.md) and
 [EXISTING_USER_UPGRADE](docs/EXISTING_USER_UPGRADE.md) for onboarding and legacy

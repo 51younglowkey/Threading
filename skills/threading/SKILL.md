@@ -1,6 +1,6 @@
 ---
 name: threading
-description: Organise an existing or new local research, design or academic project with Threading. Use for natural-language requests such as Dashboard, 接管项目, what can you do, find the current direction, map Figma evolution, 整理已经导入的聊天记录, load or use the GSA Pack, review evidence and decisions, migrate an old Threading profile, diagnose Threading, or update Threading.
+description: Run a local Research and Design project workflow with Threading from a new project, an existing project or any continuing stage. Use for natural-language requests such as Dashboard, 新建项目, 接管项目, 继续推进项目, what can you do, find the current direction, map Figma evolution, 整理已经导入的聊天记录, find evidence gaps, load or use the GSA Pack, review evidence and decisions, migrate an old Threading profile, diagnose Threading, or update Threading.
 ---
 
 # Threading
@@ -20,8 +20,13 @@ public core, local project knowledge and raw sources separate.
 
 - `Dashboard`, `status`, `overview`, `next step`: read the selected project's
   `CURRENT.md`, `packs.md` and bounded records; use the core Dashboard contract.
+- `新建项目`, `start a new project`, `set up a project`: follow the new-project
+  route in `references/routes.md`, create or select a Managed Workspace and begin
+  with the working question, intended outcome and uncertainty.
 - `接管项目`, `adopt project`, `orient this project`: follow
   `references/routes.md#existing-project-adoption`.
+- `继续推进项目`, `continue this project`, `keep working`: read the selected
+  Managed Workspace and follow the current-state / next-move route.
 - `整理已经导入的聊天记录`, `reconcile chat archive`: follow
   `references/routes.md#chat-reconciliation`.
 - `map Figma`, `current Figma`, `which design is current`: follow
@@ -32,6 +37,9 @@ public core, local project knowledge and raw sources separate.
   tracked changes and the proposed update.
 - `what can you do`, `help`: render the concise capability view in
   `references/routes.md#capability-view`.
+- `evidence gaps`, `find the evidence gaps`, `找出证据缺口`: inspect bounded
+  project records and report unsupported claims, missing source pointers and
+  pending confirmations without inventing support.
 
 ## Non-negotiable behaviour
 
