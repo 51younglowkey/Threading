@@ -7,7 +7,7 @@ import subprocess
 
 
 ROOT = Path(__file__).resolve().parents[2]
-OUTPUT = ROOT / "00_system_context" / "file_index.md"
+OUTPUT = ROOT / "core" / "system_context" / "file_index.md"
 
 IGNORED_PARTS = {
     ".academic_cache",
@@ -51,9 +51,9 @@ def likely_role(path: Path) -> str:
 
 def project_for(path: Path) -> str:
     rel = path.relative_to(ROOT)
-    if str(rel).startswith("02_templates/"):
+    if str(rel).startswith("core/templates/"):
         return "Template library"
-    if str(rel).startswith("00_system_context/"):
+    if str(rel).startswith("core/system_context/"):
         return "System context"
     if str(rel).startswith("90_scripts_tools/"):
         return "Scripts / tools"

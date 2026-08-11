@@ -52,5 +52,5 @@ This pack is not produced, approved, sponsored or endorsed by Glasgow School of
 Art (GSA). “GSA” identifies the academic context of this optional pack; it does
 not indicate institutional ownership, affiliation or policy authority.
 
-Before sharing or adapting the pack, read the core repository's `NOTICE.md`,
-`THIRD_PARTY_NOTICES.md` and `docs/PROVENANCE_AND_LICENSING.md`.
+Before sharing or adapting the pack, read the core repository's `docs/NOTICE.md`,
+`docs/THIRD_PARTY_NOTICES.md` and `docs/PROVENANCE_AND_LICENSING.md`.

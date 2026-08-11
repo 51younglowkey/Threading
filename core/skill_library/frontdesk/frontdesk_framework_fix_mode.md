@@ -9,8 +9,8 @@ This frontdesk is the entry layer for improving Threading's structure, skills, t
 | User intent | Route |
 |---|---|
 | Add or classify a reusable file | Source intake and provenance review |
-| Ask what skills exist | `20_skill_library/skill_index.md` |
-| Create a new skill | `20_skill_library/templates/skill_template.md` |
+| Ask what skills exist | `core/skill_library/skill_index.md` |
+| Create a new skill | `core/skill_library/templates/skill_template.md` |
 | Fix project structure | Framework maintenance |
 | Improve evidence reasoning | `skills/evidence_chain_discipline.md` |
 | Select a taught method | `skills/apply-taught-methods/SKILL.md` |

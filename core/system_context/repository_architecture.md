@@ -50,7 +50,7 @@ Managed Workspace and preserves the legacy profile unchanged.
 ## Versioning
 
 - `VERSION` identifies the Threading core release.
-- `CHANGELOG.md` records public capability changes.
+- `docs/CHANGELOG.md` records public capability changes.
 - `threading.json` records project schema and linked-pack state.
 - Git tags identify stable reconstructable releases.
 - Project iteration versions remain separate from Threading versions.

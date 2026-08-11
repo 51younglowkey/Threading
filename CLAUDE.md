@@ -5,8 +5,8 @@ Use this file as the parallel Claude Code routing layer for the reusable Threadi
 ## Start here
 
 1. Read `NOW.md`.
-2. Read `00_system_context/workflow_rules.md` before framework changes.
-3. Read `20_skill_library/skill_index.md` when routing a method, template or skill request.
+2. Read `core/system_context/workflow_rules.md` before framework changes.
+3. Read `core/skill_library/skill_index.md` when routing a method, template or skill request.
 4. Read only the files needed for the current task.
 
 For a first-run or `Dashboard` request, read `DASHBOARD.md` and follow

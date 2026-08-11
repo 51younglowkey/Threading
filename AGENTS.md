@@ -7,10 +7,10 @@ Reply in Chinese by default when the user writes in Chinese. Preserve useful Eng
 ## Start and routing
 
 1. Read `NOW.md` for the compact route.
-2. Read `00_system_context/workflow_rules.md` before substantive framework changes.
+2. Read `core/system_context/workflow_rules.md` before substantive framework changes.
 3. Read the closest `AGENTS.md` for any nested project added later.
 4. Read only the current files needed for the task; do not scan every source, export or generated file by default.
-5. Use `20_skill_library/skill_index.md` to route method and framework requests.
+5. Use `core/skill_library/skill_index.md` to route method and framework requests.
 6. Treat `CLAUDE.md` as the parallel Claude Code routing layer.
 
 ### Optional packs
