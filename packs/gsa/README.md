@@ -5,12 +5,12 @@ Provotyping, a reflection-document video-analysis protocol, and Stage 3
 assessment/ILO guidance to Threading for Design Innovation-related academic
 workflows.
 
-It is intentionally separate from the generic core. Users who do not need this
-context can initialize a project with `--pack none`; the resulting profile will
-contain no `packs/gsa/` directory. Users can select `--pack gsa` when creating a
-profile, or ask the Agent to load the pack into an existing profile before
-choosing a taught method. The initial target is the current GSA Stage 3 cohort;
-verify the authorised assessment source before using it with another cohort.
+It is intentionally separate from the generic core. Projects use linked,
+read-only activation: `--pack none` leaves it disabled and `--pack gsa` records
+the current pack version without copying pack files. Project analysis is written
+into the user's Git-ignored Managed Workspace. The initial target is the current
+GSA Stage 3 cohort; verify the authorised assessment source before using it with
+another cohort.
 
 The methods and reflection protocol contain paraphrases and source locators, not
 copies of course PDFs, videos or displayed student work. The assessment guide is

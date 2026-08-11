@@ -1,108 +1,74 @@
 # Threading Quickstart
 
-This guide creates a small, user-owned project profile without adding personal material to the reusable core.
-
-## Start through the Agent Dashboard
-
-Open the repository in Codex Agent and say **“Dashboard”**. The Agent will show
-the capabilities, ask whether to use Profile mode or a separate project path,
-and then run the intake in `docs/AGENT_ONBOARDING.md`. You do not need to paste
-your whole project into chat.
-
-## 1. Choose a project space
-
-For the simplest local setup, ask the Agent to create Profile mode. It will run:
+## 1. Clone once
 
 ```bash
-python3 90_scripts_tools/project_profile/init_project.py \
+git clone https://github.com/51younglowkey/Threading.git
+cd Threading
+```
+
+## 2. Install the optional natural-language skill
+
+```bash
+python3 90_scripts_tools/threading/install_skill.py
+```
+
+Start a new Codex task after installation.
+
+## 3. Adopt the existing project
+
+Say:
+
+```text
+帮我接管这个现有项目
+```
+
+Threading asks for the project title, slug and where material lives. It creates
+`projects/local/<slug>/`, which is Git-ignored. It registers pointers before
+inspection and never imports raw sources automatically.
+
+Equivalent deterministic command:
+
+```bash
+python3 90_scripts_tools/project_workspace/adopt_project.py \
   --slug my-project \
   --title "My project" \
   --pack none
 ```
 
-This creates `profiles/local/my-project/`, which is ignored by Git. It copies
-templates only; it does not import Figma files, desktop folders, PDFs or other
-source material.
+Add `--pack gsa` only when the independent linked GSA Pack is relevant.
 
-The optional GSA Pack can be selected explicitly during initialization:
+## 4. Orient sources
 
-```bash
-python3 90_scripts_tools/project_profile/init_project.py \
-  --slug my-project \
-  --title "My project" \
-  --pack gsa
-```
+Grant explicit permission for named Figma files/pages, a specific local project
+folder or a selected Markdown chat archive. Threading separates observed,
+inferred, candidate and unknown information.
 
-`--pack none` is the default. It creates no `packs/gsa/` directory. `--pack gsa`
-copies the independent Design Innovation academic pack into the user-owned
-profile.
-
-If an existing profile later needs the pack, load it explicitly:
-
-```bash
-python3 90_scripts_tools/project_profile/load_pack.py \
-  --profile profiles/local/my-project \
-  --pack gsa
-```
-
-Use `--update` only after reviewing local edits to an already copied pack. For a
-profile outside this repository, add `--allow-external-profile`.
-
-You can also choose a separate project directory or repository. Confirm the
-exact destination before creating it, and keep that project evidence separate
-from the reusable Threading core.
-
-## 2. Copy the profile template manually (if needed)
-
-Copy `profiles/_template/` to a new local project folder, for example:
+For chat history already imported, say:
 
 ```text
-profiles/local/my-project/
+整理已经导入的聊天记录
 ```
 
-The `profiles/local/` path is ignored by Git by default. If a profile will be shared, review it as a separate public artefact first.
+## 5. Confirm Current State
 
-## 3. Write the project context
+The Agent proposes the current question, direction, working set and next move.
+The user must confirm them before `CURRENT.md` changes. Older directions remain
+in decision and iteration history.
 
-Start with:
-
-- the question or brief;
-- the relevant people, systems or setting, using neutral labels where possible;
-- what is known, assumed and still missing;
-- evidence boundaries, consent requirements and exclusions;
-- the intended output and current status.
-
-Do not begin with a polished claim. Begin with what the project can actually support.
-
-## 4. Select a method
-
-If the GSA Pack is loaded, read the relevant entry in:
-
-- `packs/gsa/methods/semester1-method-catalog.md`;
-- `packs/gsa/methods/semester2-method-catalog.md`;
-- `packs/gsa/methods/provotyping-for-participatory-innovation.md`;
-- `packs/gsa/reflection-document/video-analysis-method.md`;
-- `packs/gsa/assessment/stage3-assessment-guide.md`.
-
-Use the assessment guide as an operational audit scaffold only; verify current
-requirements against the authorised official assessment form.
-
-Use `20_skill_library/skills/apply-taught-methods/SKILL.md` to record why the method fits, what inputs it uses, what it produces and what it cannot establish.
-
-## 5. Keep the chain visible
-
-For each meaningful decision, update the evidence and decision records:
+## 6. Use the Dashboard
 
 ```text
-source → note → interpretation → claim → criterion → concept → test → iteration
+Threading Dashboard
 ```
 
-Use `[EVIDENCE NEEDED]`, `[SOURCE TO VERIFY]` or `[DECISION PENDING]` when a link is missing.
+The Dashboard shows Current State, registered knowledge, chat review queue,
+linked GSA Pack status and one next move.
 
-## 6. Run a privacy check before sharing
+## 7. Update later
 
-Check for names, email addresses, schedules, private correspondence, raw recordings, identifiable images, consent records, absolute paths and institution-restricted files. Remove or anonymise them before moving anything from `profiles/local/` into a shared repository.
+```text
+Update Threading
+```
 
-## 7. Remember the boundary
-
-Threading is a reasoning and traceability scaffold. It does not provide ethics approval, legal advice, institutional policy or evidence that a proposed intervention works.
+Or use `90_scripts_tools/threading/update_threading.py`. See `docs/UPDATING.md`.

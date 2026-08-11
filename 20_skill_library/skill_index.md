@@ -4,12 +4,13 @@ Last updated: 2026-08-11
 
 ## Reusable behaviour
 
-### Threading Dashboard and Project Onboarding
+### Threading Managed Workspace
 
-File: `skills/threading-dashboard/SKILL.md`
+Installable skill: `../skills/threading/SKILL.md`
+Compatibility route: `skills/threading-dashboard/SKILL.md`
 
-Use when a user needs a first-run overview, a project intake, a text dashboard,
-source mapping or a user-owned local project profile.
+Use for Dashboard, existing-project adoption, Current State, Figma evolution,
+chat reconciliation, linked GSA Pack, migration, update or doctor.
 
 ### Evidence Chain Discipline
 
@@ -44,7 +45,8 @@ Use when improving Threading's structure, skill library, templates, indexes or b
 - `packs/gsa/reflection-document/video-analysis-method.md`
 - `packs/gsa/assessment/stage3-assessment-guide.md`
 
-The GSA Pack must be selected before using these pack-specific references.
+The linked GSA Pack must be enabled for the selected Managed Workspace before
+using these pack-specific references.
 
 ## Boundaries
 

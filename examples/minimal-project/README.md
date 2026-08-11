@@ -23,4 +23,5 @@ assumption → mapping prompt → observed disagreement → interpretation
           → revised question → bounded next test
 ```
 
-See `profiles/_template/` for the full profile scaffold.
+See `projects/_template/` for the full Managed Workspace scaffold. The older
+`profiles/_template/` path is retained only for legacy migration compatibility.

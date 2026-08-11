@@ -17,18 +17,22 @@ Reply in Chinese by default when the user writes in Chinese. Preserve useful Eng
 
 - Load the generic Threading core by default; do not load an optional pack unless the user selects it.
 - When the user selects the GSA Pack, or says “load pack gsa”, read `packs/gsa/PACK.md` before using its methods, reflection-document tool or assessment guide.
-- During profile initialization, `--pack none` is the default and creates no `packs/gsa/` directory; `--pack gsa` copies the pack into the user-owned profile.
+- The GSA Pack uses linked, read-only activation. Enabling it records the pack and version in the local project; it does not copy or modify `packs/gsa/`.
 - Describe the GSA Pack as an independent academic pack for Design Innovation-related workflows. Never imply that it is official, endorsed or institutionally owned by GSA.
 
 ### Agent dashboard and first run
 
 - On a first interaction, or whenever the user asks for `Dashboard`, `status`, `overview` or `next step`, read `DASHBOARD.md` and render its compact text view.
-- If no project profile is selected, follow `docs/AGENT_ONBOARDING.md` one question at a time. Do not invent a project brief or silently choose between multiple profiles.
-- User-owned project context belongs in `profiles/local/<slug>/` (ignored by Git) or in a separately controlled project repository. Keep it out of the reusable core.
+- If no Managed Workspace is selected, follow `docs/AGENT_ONBOARDING.md`. For an existing project, prefer the adoption route over a blank-project intake.
+- Complete user-owned project knowledge belongs in `projects/local/<slug>/` (ignored by Git). `profiles/local/` is a legacy compatibility layer only.
+- Read the closest nested `AGENTS.md`, then `CURRENT.md`, before substantive project work.
 - Record pointers to Figma files, desktop folders and other repositories in `source_map.md`; a pointer is not permission to inspect the source.
 - Ask for explicit permission before reading a named local or connected source. Never import raw project material automatically.
-- Use `90_scripts_tools/project_profile/init_project.py` only after the user confirms the profile location and slug. Use `render_dashboard.py` when a deterministic text status is useful.
-- For an existing profile, use `90_scripts_tools/project_profile/load_pack.py` only after the user explicitly selects the pack and target profile; use `--allow-external-profile` for an external profile.
+- Use `90_scripts_tools/project_workspace/adopt_project.py` only after the user confirms the project title, slug and local destination.
+- For `整理已经导入的聊天记录` or `reconcile chat archive`, register the user-selected Markdown archive with `reconcile_chat_archive.py`, then review candidates in bounded batches.
+- For Figma evolution, let the Agent propose a current candidate and require the user to confirm it before changing `CURRENT.md`.
+- Use `manage_pack.py` for linked GSA activation and show the pack capabilities immediately.
+- For `Update Threading`, run `update_threading.py` in check mode before any `--apply` action.
 - The PDF/image OCR index is an optional local tool. Read its README and require an explicitly authorised source directory before using it; its OCR output is a locator, not automatic project evidence.
 
 ## Non-negotiable rules
@@ -47,7 +51,7 @@ Reply in Chinese by default when the user writes in Chinese. Preserve useful Eng
 ## Workspace boundaries
 
 - The reusable core contains rules, methods, templates and tools.
-- A user-owned project profile may contain context, evidence, decisions and outputs, but it should not be mixed into the reusable core.
+- A Git-ignored Managed Workspace may contain bounded derived knowledge, context, evidence, decisions and outputs. Raw sources may remain in Figma, local folders or chat archives and must retain pointers and provenance.
 - Calendar, timetable, deadline and personal-administration records are not part of this edition.
 - A future public profile must use neutral examples or user-supplied project data and must document its provenance.
 

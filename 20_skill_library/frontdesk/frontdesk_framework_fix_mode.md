@@ -14,7 +14,7 @@ This frontdesk is the entry layer for improving Threading's structure, skills, t
 | Fix project structure | Framework maintenance |
 | Improve evidence reasoning | `skills/evidence_chain_discipline.md` |
 | Select a taught method | `skills/apply-taught-methods/SKILL.md` |
-| Write a project argument | User-owned project profile, evidence-first workflow |
+| Write a project argument | User-owned Managed Workspace, evidence-first workflow |
 
 ## Required behaviour
 

@@ -19,4 +19,6 @@ This route is for maintaining Threading's reusable functions and framework.
 - replacing ethics or consent judgement;
 - turning a user's private project archive into shared examples without a privacy review.
 
-If a request is project-content heavy, route it to the user's own project profile and preserve the reusable core's boundary.
+If a request is project-content heavy, route it to the user's Git-ignored
+Managed Workspace under `projects/local/` and preserve the reusable core's
+boundary.

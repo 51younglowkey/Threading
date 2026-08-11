@@ -13,7 +13,7 @@ PROFILE_ROOT = ROOT / "profiles" / "local"
 
 
 def parse_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description="Render a text dashboard for a Threading project profile.")
+    parser = argparse.ArgumentParser(description="Render a legacy text dashboard for a Threading project profile.")
     parser.add_argument("--profile", type=Path, help="profile directory, relative to the workspace")
     parser.add_argument(
         "--allow-external-profile",
@@ -74,7 +74,7 @@ def render_first_run() -> None:
     print("THREADING / FIRST RUN")
     print("────────────────────────────────────────────────────────────────")
     print("Workspace       Threading")
-    print("Mode            Reusable core + user-owned local project profile")
+    print("Mode            Reusable core + user-owned legacy local project profile")
     print("Packs           none loaded by default")
     print("Project         Not started")
     print("Next move       Start a short project intake")

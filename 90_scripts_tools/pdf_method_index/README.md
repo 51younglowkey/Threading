@@ -22,7 +22,7 @@ source files to GitHub.
 - OCR output is a locator and review aid, not verified quotation, empirical
   evidence or a project claim.
 - After locating a page or image, visually check the original source and write a
-  bounded evidence or reading note into the user's own project profile.
+  bounded evidence or reading note into the user's own Managed Workspace.
 
 ## Optional dependencies / 可选依赖
 

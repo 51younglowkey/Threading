@@ -28,10 +28,14 @@ Brief → Sources → Evidence → Interpretation → Decision
 - 记录 Figma、桌面文件夹或其他 repository 的 source pointer；
 - 区分原始材料、观察、interpretation、claim、criterion 和 decision；
 - 追踪 prototype、testing、iteration 以及仍然缺失的证据；
-- 在本地 project profile 中保留自己的项目 context，而不污染 reusable core。
+- 在本地 Managed Workspace 中保留自己的项目 context，而不污染 reusable core。
 
 Threading 不会替你生成证据、自动导入项目材料、提供 ethics approval，或证明
 一个设计已经有效。
+
+完整产品仍然是 Threading Workspace；可安装 Skill 是自然语言入口，不是项目
+存储空间。每个学校或研究项目的本地知识保存在
+`projects/local/<slug>/`，而公共规则、工具和 GSA Pack 保持在可更新的 core。
 
 ### 快速开始
 
@@ -48,14 +52,28 @@ cd Threading
 Dashboard
 ```
 
-首次使用时，Agent 会按照 `docs/AGENT_ONBOARDING.md` 一次询问一个问题，
-再创建一个只属于你的 project profile。默认 profile 在
-`profiles/local/<slug>/`，该目录被 Git 忽略，不会进入 Threading 公共仓库。
-
-创建一个通用项目：
+为了让这些自然语言入口在其他 Codex 项目中也能稳定触发，可以安装仓库内的
+Threading skill：
 
 ```bash
-python3 90_scripts_tools/project_profile/init_project.py \
+python3 90_scripts_tools/threading/install_skill.py
+```
+
+然后新建一个 Codex 任务并说：
+
+```text
+帮我接管这个现有项目
+```
+
+Agent 会按照 `docs/AGENT_ONBOARDING.md` 创建完整的 Managed Workspace。
+默认位置是 `projects/local/<slug>/`，该目录被 Git 忽略，不会进入 Threading
+公共仓库。Figma、本地文件夹和完整聊天导出可以留在原位；经过确认的 derived
+knowledge、Current State、decisions 和 outputs 会保存在本地 Workspace。
+
+接管一个已有项目：
+
+```bash
+python3 90_scripts_tools/project_workspace/adopt_project.py \
   --slug my-project \
   --title "My project" \
   --pack none
@@ -64,23 +82,24 @@ python3 90_scripts_tools/project_profile/init_project.py \
 如果你明确需要 GSA Pack：
 
 ```bash
-python3 90_scripts_tools/project_profile/init_project.py \
+python3 90_scripts_tools/project_workspace/adopt_project.py \
   --slug my-project \
   --title "My project" \
   --pack gsa
 ```
 
-已有项目也可以在确认 profile 路径后加载：
+已有 Managed Workspace 也可以在确认路径后启用：
 
 ```bash
-python3 90_scripts_tools/project_profile/load_pack.py \
-  --profile profiles/local/my-project \
-  --pack gsa
+python3 90_scripts_tools/project_workspace/manage_pack.py \
+  --project projects/local/my-project \
+  --enable-gsa
 ```
 
 ### 可选 GSA Pack
 
-GSA Pack 不会默认加载。它包括：
+GSA Pack 不会默认启用。它采用 linked、read-only activation，不会复制到项目中，
+也不会被项目分析污染。它包括：
 
 - Semester 1 / Semester 2 taught-method catalogues；
 - Provotyping 方法说明；
@@ -150,11 +169,16 @@ It helps an Agent and a project owner to:
 - keep raw material, observations, interpretations, claims, criteria and
   decisions distinct;
 - connect prototypes to learning questions, tests and iteration records;
-- keep project-specific context in a user-owned profile rather than in the
-  reusable core.
+- keep project-specific context in a user-owned Managed Workspace rather than in
+  the reusable core.
 
 Threading does not invent evidence, automatically import project files, provide
 ethics approval or prove that an intervention works.
+
+The complete product remains the Threading Workspace. The installable Skill is a
+natural-language entry point, not project storage. Each school or research
+project keeps its local knowledge under `projects/local/<slug>/`, while the
+reusable rules, tools and GSA Pack remain in the updateable public core.
 
 ### Quick start
 
@@ -172,14 +196,22 @@ Dashboard
 ```
 
 The Agent follows `docs/AGENT_ONBOARDING.md` one question at a time and creates
-a user-owned project profile. The default location is
-`profiles/local/<slug>/`, which is ignored by Git and is not part of the public
-Threading repository.
-
-Create a generic project profile:
+a complete user-owned Managed Workspace. Install the optional natural-language
+skill first when Threading should be available from other Codex projects:
 
 ```bash
-python3 90_scripts_tools/project_profile/init_project.py \
+python3 90_scripts_tools/threading/install_skill.py
+```
+
+Then start a new Codex task and say `adopt this existing project`. The default
+workspace location is `projects/local/<slug>/`, which is ignored by Git and is
+not part of the public Threading repository. Raw Figma, local-folder and chat
+sources may stay in place while confirmed derived knowledge is stored locally.
+
+Adopt an existing project:
+
+```bash
+python3 90_scripts_tools/project_workspace/adopt_project.py \
   --slug my-project \
   --title "My project" \
   --pack none
@@ -188,23 +220,23 @@ python3 90_scripts_tools/project_profile/init_project.py \
 Select the independent GSA Pack only when it is relevant:
 
 ```bash
-python3 90_scripts_tools/project_profile/init_project.py \
+python3 90_scripts_tools/project_workspace/adopt_project.py \
   --slug my-project \
   --title "My project" \
   --pack gsa
 ```
 
-An existing profile can load it later after the user confirms the profile path:
+An existing Managed Workspace can enable it after the user confirms the path:
 
 ```bash
-python3 90_scripts_tools/project_profile/load_pack.py \
-  --profile profiles/local/my-project \
-  --pack gsa
+python3 90_scripts_tools/project_workspace/manage_pack.py \
+  --project projects/local/my-project \
+  --enable-gsa
 ```
 
 ### Optional GSA Pack
 
-The GSA Pack is opt-in. It contains taught-method catalogues, a Provotyping note,
+The GSA Pack is opt-in and uses linked, read-only activation. It contains taught-method catalogues, a Provotyping note,
 a reflection-document guidance-video analysis protocol, and an operational
 paraphrase of Stage 3 ILO, rubric and audit logic.
 
@@ -224,7 +256,7 @@ your PDF / image files
 → local OCR index
 → keyword search and page/image locator
 → visual check of the original source
-→ write a bounded evidence or reading note into your project profile
+→ write a bounded evidence or reading note into your Managed Workspace
 ```
 
 The original files are not uploaded or copied into the public repository. The

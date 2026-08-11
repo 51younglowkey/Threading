@@ -17,14 +17,16 @@ licence to redistribute the teaching materials.
 - `90_scripts_tools/pdf_method_index/` is optional. It runs only when a user supplies an authorised local `--source-dir` containing their own PDFs or images; the source files stay outside this repository and the derived OCR index stays ignored.
 - The catalogues do not grant permission to reproduce the course slides, diagrams, extended quotations or assessment material.
 
-Before public release, decide whether to:
+For future releases, continue to review whether to:
 
 1. retain the current locator detail;
 2. replace it with a more general description of the method family;
 3. publish only independently authored paraphrases and public references; or
 4. obtain explicit permission for any material that goes beyond a short citation or abstract method summary.
 
-This decision is still pending.
+The current public release uses independently authored paraphrases and source
+locators without bundling restricted originals. Repeat this review when adding
+new pack content.
 
 ## Assessment and reflection-document guidance
 
