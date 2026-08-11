@@ -32,7 +32,9 @@ This checklist is a gate, not proof that release is safe.
 
 ## Final decision
 
-Release status: v0.2.0 prepared locally; verify the public branch, tag and GitHub release after push
+Release status: v0.2.0 released and verified on the public `main` branch and GitHub release
+
+Release: https://github.com/51younglowkey/Threading/releases/tag/v0.2.0
 
 Reviewer:
 
