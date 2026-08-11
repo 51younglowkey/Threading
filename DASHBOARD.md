@@ -1,88 +1,82 @@
 # Threading Dashboard
 
-This is the Agent-facing text dashboard for Threading. Read it when a user asks for the dashboard, status, overview, or next step, and when a new user starts without a project profile.
+Threading is a complete local reasoning workspace with an optional installable
+skill. It organises derived project knowledge without pretending that imported
+history is current or that a framework is evidence.
 
-Threading is a local-first reasoning workspace. It helps a project move from a brief to traceable evidence, decisions, prototypes and writing. It does not upload a project, invent evidence or replace academic judgement.
+## Welcome view
 
-## First-run view
+Use this when no Managed Workspace is selected or the user asks what Threading
+can do:
 
 ```text
-THREADING / FIRST RUN
+THREADING / WELCOME
 ────────────────────────────────────────────────────────────────
-Workspace       Threading
-Mode            Reusable core + user-owned local project profile
-Packs           none loaded by default
-Project         Not started
-Next move       Start a short project intake
-Privacy         Project files stay in the user's chosen local space
-                 unless the user explicitly asks the Agent to inspect them
+I can help you:
+  1. adopt an existing complex project
+  2. identify and confirm its Current State
+  3. organise derived knowledge from Figma, files and chat history
+  4. trace evidence → decision → prototype → test → iteration
+  5. use the optional GSA Pack for methods and Stage 3 work
+  6. show one evidence-supported next move
+
+Start with: “帮我接管这个现有项目”
 ────────────────────────────────────────────────────────────────
 ```
 
-If `profiles/local/` contains a project profile, replace the first-run view with the project view below. If more than one profile exists, ask which one to show; do not silently choose.
+## Natural-language routes
 
-## Capability map
+- `Dashboard`, `status`, `overview`: render the selected project's current view.
+- `帮我接管这个现有项目`, `adopt project`: create or select a Managed Workspace,
+  register source pointers, orient bounded sources and propose Current State.
+- `整理已经导入的聊天记录`, `reconcile chat archive`: register the selected
+  Markdown archive, extract candidates and ask before promotion.
+- `帮我整理 Figma 的演变`, `map Figma`: record file/page/frame evolution and
+  propose a current candidate for user confirmation.
+- `加载 GSA Pack`, `load pack gsa`: enable the linked pack and show its methods,
+  Provotyping, Reflection Document and Stage 3 capabilities.
+- `Update Threading`: check tracked changes and remote state before a safe
+  fast-forward update.
+- `Threading doctor`: verify core, skill, privacy ignore, project schema and pack.
 
-```text
-BRIEF → SOURCES → EVIDENCE → INTERPRETATION → DECISION → PROTOTYPE → TEST → ITERATION
-```
+## Project view
 
-- **Frame** — turn an initial brief into a working question, intended output and constraints.
-- **Locate** — record where the project already lives: Figma, a local folder, another repository or a mixed setup.
-- **Trace** — keep source material, notes, interpretations, claims and limitations distinct.
-- **Choose** — make decisions visible, including alternatives, reasons and what remains uncertain.
-- **Apply** — select a method from the generic core or an explicitly loaded pack because it answers a named analytical need.
-- **Build and test** — connect prototype versions to learning questions, observations and iteration decisions.
-- **Reflect** — prepare a retrospective or submission review without turning a framework into proof.
-
-## Project view template
-
-When a profile exists, render a compact view like this. Use only information found in the profile files; never infer progress from the existence of a file.
+Read the selected `projects/local/<slug>/CURRENT.md`, `packs.md` and bounded
+records. Do not infer current state from file modification time alone.
 
 ```text
 THREADING / PROJECT DASHBOARD
 ────────────────────────────────────────────────────────────────
-Project         <title>
-Profile         profiles/local/<slug>/
-Packs           <none | gsa>
-Status          <draft | active | maintenance | archived>
-Phase           <framing | evidence | synthesis | prototype | testing | writing>
-Last update     <date or [DATE TO CONFIRM]>
+Project          <title>
+Workspace        projects/local/<slug>/
+Phase            <phase>
+Last confirmed   <date or [DATE TO CONFIRM]>
+Current status   <confirmed | needs confirmation>
+Current question <confirmed question or [DECISION PENDING]>
+Current direction <confirmed direction or [DECISION PENDING]>
 
-READINESS
-  Brief         <ready | needs input | blocked | not started>
-  Sources       <mapped | needs input | not started>
-  Evidence      <traceable | needs input | not started>
-  Decisions     <visible | needs input | not started>
-  Prototype     <recorded | needs input | not started>
-  Privacy       <checked | needs review | not started>
+KNOWLEDGE
+  Sources        <registered count>
+  Evidence       <record count>
+  Decisions      <record count>
+  Chat review    <candidate count>
 
-NEXT MOVE       <one concrete action, or [DECISION PENDING]>
+GSA PACK         <enabled/disabled> / <version>
+NEXT MOVE        <one concrete action or [DECISION PENDING]>
 ────────────────────────────────────────────────────────────────
-Say “start project”, “update dashboard”, “map my sources”, or “review privacy” to continue.
 ```
 
-## Dashboard commands
+## Current-state rule
 
-These are natural-language routes, not shell commands:
+Root `NOW.md` describes Threading itself. A local project's `CURRENT.md`
+describes what that school/research/design project currently accepts as active.
+The Agent may propose changes from newer Figma or chat material, but only the
+user can confirm promotion to Current State. Preserve earlier states in decision
+and iteration history.
 
-- **“Dashboard” / “status”** — inspect the selected profile and render the project view.
-- **“Start project”** — run the intake in `docs/AGENT_ONBOARDING.md` one question at a time.
-- **“Map my sources”** — record pointers to Figma, local folders, repositories or other sources; ask permission before inspecting any location.
-- **“Orient my project”** — after permission, make a bounded top-level pass over the named Figma/file/repository source and separate observed facts from inference and unknowns.
-- **“Update dashboard”** — re-read the profile files and update only supported statuses.
-- **“Review privacy”** — check for personal material, raw participant data, private correspondence, absolute paths, secrets and institution-restricted sources.
-- **“Choose a method”** — route through `20_skill_library/skills/apply-taught-methods/` after the brief and analytical need are clear.
-- **“Load pack gsa”** — read `packs/gsa/PACK.md` and make the independent Design Innovation academic pack available for this project; ask before changing an existing profile's pack selection.
-- **External profile** — if the user has explicitly chosen a profile outside this
-  repository, use the bounded renderer with `--allow-external-profile`; never
-  infer or scan an external path from a pointer alone.
+## Source boundary
 
-## What the Agent must not do
-
-- Do not copy a user's Figma files, desktop folders, recordings, calendars or correspondence into the reusable core.
-- Do not inspect a local folder or repository merely because its path was mentioned; ask for explicit permission to read it.
-- Do not treat a file name, method, diagram or hypothesis as evidence of a project finding.
-- Do not mark a step ready when the profile contains a placeholder or missing support.
-- Do not commit `profiles/local/` unless the user explicitly reviews it as a separate shareable artefact.
-- Do not load or copy an optional pack merely because its name appears in a project source; require an explicit selection.
+Raw Figma files, desktop folders and complete chat archives may stay in their
+original locations. Bounded derived text may live in the local Managed Workspace
+when it records source ID, pointer, inspected scope, date and status. A pointer
+is not inspection permission.

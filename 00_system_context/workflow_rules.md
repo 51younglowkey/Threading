@@ -31,7 +31,7 @@ These rules govern the reusable core. They apply to academic, design-research an
 ## Personal and public boundaries
 
 - Personal names, contact details, schedules, correspondence, consent records, raw recordings, identifiable images and institution-restricted documents remain outside the reusable core.
-- User-owned project profiles should use their own local storage and should not be copied into the public edition by default.
+- User-owned Managed Workspaces should use their own local storage and should not be copied into the public edition by default.
 - Neutral examples must be labelled as examples; synthetic or mock data must be labelled as synthetic or mock.
 - Review both the working tree and Git history before external publication.
 

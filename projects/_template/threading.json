@@ -1,0 +1,11 @@
+{
+  "schema_version": 2,
+  "workspace_type": "managed",
+  "threading_version": "[THREADING VERSION]",
+  "project_slug": "[PROJECT SLUG]",
+  "gsa_pack": {
+    "enabled": false,
+    "mode": "linked-read-only",
+    "version": null
+  }
+}

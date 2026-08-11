@@ -1,7 +1,7 @@
 # GSA Pack — Design Innovation Academic Pack
 
 ID: `gsa`
-Status: optional; not loaded by default
+Status: optional; linked and read-only; not enabled by default
 Dependency: Threading core for Dashboard, profile, evidence-chain and generic skill routing
 Scope: academic methods, reflection-document analysis and Stage 3 assessment guidance useful for Design Innovation-related study and project work
 Initial audience: the current target GSA Stage 3 cohort; verify the authorised source version locally before reuse with another cohort
@@ -21,22 +21,21 @@ not required for the core dashboard, profile or evidence-chain workflow.
 - `assessment/stage3-assessment-guide.md` — ILO, rubric, grade-band and audit
   guide derived from the current official assessment forms.
 
-## Load behaviour
+## Activation behaviour
 
-Select it when creating a project profile:
+Select it when creating a Managed Workspace:
 
 ```bash
-python3 90_scripts_tools/project_profile/init_project.py \
+python3 90_scripts_tools/project_workspace/adopt_project.py \
   --slug my-project \
   --title "My project" \
   --pack gsa
 ```
 
-The Agent should load this pack only when the user selects it or says “load pack
-gsa”. It can be selected during profile creation with `--pack gsa`, or added to
-an existing profile with the bounded `load_pack.py` tool after the user confirms
-the target profile. If the user chooses `--pack none`, no GSA pack files are
-copied into the profile.
+The Agent should enable this pack only when the user selects it or says “load
+pack gsa”. Activation records `enabled`, `linked-read-only` and the pack version
+inside the local project. It does not copy the pack into the project. Threading
+updates change the linked core; local project analysis remains separate.
 
 ## Provenance and boundary
 

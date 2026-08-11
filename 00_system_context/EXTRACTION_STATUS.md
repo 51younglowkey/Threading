@@ -1,7 +1,7 @@
 # Threading — Extraction Status
 
 Created: 2026-08-10
-Status: Public-release candidate; cleaned core, optional packs and onboarding scaffold reviewed
+Status: v0.2 release prepared locally; public branch/tag verification pending
 
 ## Purpose
 
@@ -31,13 +31,13 @@ The source workspace remains unchanged. This directory has its own Git repositor
 - neutral evidence, reading, interview, prototype-testing and progress templates;
 - bounded method-indexing, markdown-indexing and file-backup utilities;
 - general evidence-chain and retrospective-warning guidance, pending final review.
-- a user-owned project-profile scaffold and clearly labelled synthetic example;
+- a legacy user-owned project-profile scaffold and clearly labelled synthetic example;
 - onboarding, publication-checklist and provenance/licensing notes.
 - the confirmed split licence: MIT for original tools, CC BY 4.0 for original documentation/templates, and no Threading licence for third-party material.
 
-## Remaining work
+## Historical pre-publication gate
 
-The retained tree still requires a full privacy, provenance and generalisation review. Before GitHub publication:
+At extraction time, the retained tree still required a full privacy, provenance and generalisation review. The historical gate was:
 
 1. scan all retained text, metadata and binary documents for personal or institution-specific material;
 2. verify every method source locator and remove unsupported local-path claims;
@@ -57,3 +57,12 @@ Threading edition. The historical extraction gate above records the state before
 that decision; it does not authorise adding personal project material or
 restricted originals. The public edition keeps the GSA assessment content as an
 operational paraphrase and keeps the PDF/image index optional and local-first.
+
+## Current v0.2 status — 2026-08-11
+
+The v0.2 implementation adds Git-ignored Managed Workspaces under
+`projects/local/<slug>/`, an installable natural-language Skill, existing-project
+adoption, legacy migration, Figma evolution candidates, chat reconciliation,
+linked read-only GSA activation, safe update checks and a local doctor. The
+legacy `profiles/` layer remains only as a migration path; it is not the default
+project storage model.

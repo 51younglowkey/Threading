@@ -9,7 +9,7 @@ This checklist is a gate, not proof that release is safe.
 - [x] No participant identities, consent records, raw recordings or identifiable images remain.
 - [x] No official PDFs, assessment forms, guidance videos or displayed student examples are bundled.
 - [x] Synthetic examples are clearly labelled as synthetic.
-- [x] User-owned profiles are separate from the reusable core.
+- [x] User-owned Managed Workspaces are separate from the reusable core.
 - [x] Optional packs are explicitly identified, and the GSA Pack is described as independent rather than institutionally endorsed.
 
 ## Provenance and licensing
@@ -32,7 +32,7 @@ This checklist is a gate, not proof that release is safe.
 
 ## Final decision
 
-Release status: public release candidate; verify the public branch and GitHub visibility after push
+Release status: v0.2.0 prepared locally; verify the public branch, tag and GitHub release after push
 
 Reviewer:
 

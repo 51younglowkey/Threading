@@ -1,0 +1,6 @@
+interface:
+  display_name: "Threading"
+  short_description: "Organise complex research and design projects locally"
+  default_prompt: "Use $threading to orient this project and show its current state."
+policy:
+  allow_implicit_invocation: true

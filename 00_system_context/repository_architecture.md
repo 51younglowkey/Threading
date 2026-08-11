@@ -1,38 +1,56 @@
 # Threading Repository Architecture
 
-Updated: 2026-08-10
+Updated: 2026-08-11
+Schema: 2
 
-## Core and profiles
-
-Threading is the reusable system layer: rules, methods, templates, bounded tools, an Agent-facing text Dashboard and documentation about how to keep academic work traceable.
-
-Each user may add a separate project profile containing their own context, evidence, decisions, prototypes and outputs. A profile should be clearly marked as user-owned and should not silently become part of the reusable core.
-
-The first-run route is Agent-native: `DASHBOARD.md` explains the capability map,
-`docs/AGENT_ONBOARDING.md` collects a minimum brief, and a profile is created
-only after the user confirms its local destination. Figma files, desktop folders
-and other repositories are source pointers until the user explicitly permits
-inspection.
+## Four layers
 
 ```text
-Threading
-├── reusable rules, methods, templates and tools
-├── optional packs selected at project initialization
-└── optional user-owned project profiles (local or separately controlled)
+Public Threading core
+  rules, templates, scripts, linked packs and update source
+            │
+            ├── installable Threading skill
+            │     natural-language routing in Codex
+            │
+            └── projects/local/<slug>/
+                  private Managed Workspace for one school/research/design project
+                         │
+                         └── external raw sources
+                              Figma / local folders / chat archives
 ```
+
+The complete product is the Threading repository plus a user-owned Managed
+Workspace. The standalone skill is an access and routing layer, not project
+storage.
+
+## Current and history
+
+Root `NOW.md` describes the Threading product. Each local `CURRENT.md` contains
+the user-confirmed present state of one project. Evidence, decision and iteration
+records preserve history, including rejected and superseded directions.
+
+## Local knowledge boundary
+
+`projects/local/` is Git-ignored. It may contain bounded derived text and
+analysis from explicitly authorised sources when every record preserves a source
+pointer, inspected scope, date and status. Raw sources may remain in their
+original controlled locations and are not imported automatically.
+
+## Packs
+
+Optional packs use linked, read-only activation. A project records the enabled
+pack and version in `packs.md` and `threading.json`; project-specific analysis
+never modifies the public pack source.
+
+## Compatibility
+
+`profiles/local/` is the v0.1 compatibility layer. Migration creates a new
+Managed Workspace and preserves the legacy profile unchanged.
 
 ## Versioning
 
-- Use ordinary commits for meaningful, reviewable changes.
-- Use a version number in a document when an artefact reaches a named iteration.
-- Use a Git tag only for a stable milestone that may need to be reconstructed or cited.
-- Keep version records distinct from project names and profile names.
-- Explain why a change happened in an iteration record; a commit alone is not a research rationale.
-
-## Privacy boundary
-
-The public edition must exclude personal correspondence, schedules, participant identities, consent records, raw recordings, identifiable images, private academic administration, local absolute paths, caches, dependencies and generated exports. A clean working tree is not enough: inspect historical commits and archived refs before publishing.
-
-## Lifecycle
-
-The reusable core may evolve continuously. A user-owned profile can be active, in maintenance or archived. Archiving preserves its historical record and does not authorise deletion or silent modernisation.
+- `VERSION` identifies the Threading core release.
+- `CHANGELOG.md` records public capability changes.
+- `threading.json` records project schema and linked-pack state.
+- Git tags identify stable reconstructable releases.
+- Project iteration versions remain separate from Threading versions.

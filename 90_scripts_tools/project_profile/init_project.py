@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Create a user-owned Threading project profile without importing source material."""
+"""Create a legacy user-owned Threading project profile without importing sources."""
 
 from __future__ import annotations
 
@@ -18,7 +18,7 @@ SLUG_PATTERN = re.compile(r"^[a-z0-9][a-z0-9-]{0,63}$")
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
-        description="Create an ignored, user-owned Threading project profile."
+        description="Create an ignored, user-owned legacy Threading project profile."
     )
     parser.add_argument("--slug", required=True, help="lowercase project slug, e.g. community-repair-lab")
     parser.add_argument("--title", default="Untitled project", help="project title written to context.md")
@@ -92,14 +92,16 @@ def write_packs(profile: Path, selected: str) -> None:
     if selected == "gsa":
         if not GSA_PACK.is_dir():
             raise SystemExit(f"Missing optional pack directory: {GSA_PACK}")
-        destination = profile / "packs" / "gsa"
-        shutil.copytree(GSA_PACK, destination)
+        pack_version = (GSA_PACK / "VERSION").read_text(encoding="utf-8").strip()
         packs_path.write_text(
             "# Loaded Packs\n\n"
             "Core: Threading\n"
             "Optional packs: gsa\n"
-            "Pack source: packs/gsa/PACK.md\n\n"
-            "The GSA pack was selected during project initialization.\n",
+            "Pack mode: linked-read-only\n"
+            f"Pack version: {pack_version}\n"
+            "Pack source: core packs/gsa/PACK.md\n\n"
+            "The GSA pack was linked during project initialization. "
+            "Project analysis must not modify the pack source.\n",
             encoding="utf-8",
         )
         return
@@ -138,7 +140,7 @@ def main() -> int:
     print(f"Created user-owned profile: {display_path}")
     print(f"Optional pack: {args.pack}")
     print("Next: fill context.md, source_map.md and status.md through the Agent intake.")
-    print("No source files were imported.")
+    print("No source files or pack copies were imported.")
     return 0
 
 
