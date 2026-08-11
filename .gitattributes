@@ -1,0 +1,8 @@
+# Document and media artefacts should not be rendered as line-oriented diffs.
+*.pdf binary
+*.docx binary
+*.xlsx binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.m4a binary

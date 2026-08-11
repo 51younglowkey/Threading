@@ -1,0 +1,7 @@
+# Optional dependencies for the local PDF / image OCR index.
+# These are not required for Threading's core profile or Dashboard workflow.
+numpy
+Pillow
+pypdfium2
+rapidocr
+onnxruntime

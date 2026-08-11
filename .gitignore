@@ -1,0 +1,35 @@
+# macOS and editor noise
+.DS_Store
+**/.DS_Store
+*.swp
+*.tmp
+*.log
+
+# Dependencies and generated application state
+**/node_modules/
+**/dist/
+**/.next/
+**/.vinext/
+**/.wrangler/
+**/.cache/
+**/__pycache__/
+**/*.pyc
+
+# Regenerable workspace material and local archives
+/tmp/
+/outputs/
+/backups/
+/.academic_cache/
+
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Local source material that should be explicitly reviewed before adding
+/course_sources/
+/private_sources/
+/profiles/local/
+/examples/generated/

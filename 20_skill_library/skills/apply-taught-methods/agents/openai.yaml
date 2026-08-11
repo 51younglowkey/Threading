@@ -1,0 +1,4 @@
+interface:
+  display_name: "Apply Taught Methods"
+  short_description: "Apply selected academic methods to traceable project analysis"
+  default_prompt: "Use $apply-taught-methods to structure this project analysis with a selected method pack and explicit evidence boundaries."
