@@ -1,5 +1,7 @@
 # Threading — Claude Code Instructions
 
+Threading is an Agent-native, evidence-led Research and Design project workflow.
+
 Use this file as the parallel Claude Code routing layer for the reusable Threading workspace. `AGENTS.md` is the primary Codex route; keep the two files conceptually aligned. The optional GSA Pack is loaded only when selected by the user.
 
 ## Start here

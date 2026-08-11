@@ -1,6 +1,6 @@
 # Threading Instructions
 
-Threading is a reusable academic and design-research workspace. The generic core is available to every project; an independent GSA Pack provides an optional situated academic context for Design Innovation-related workflows. Each person's project context, evidence and decisions remain their own.
+Threading is an Agent-native, evidence-led Research and Design project workflow. Its reusable core is available to every project; an independent GSA Pack provides an optional situated academic context for Design Innovation-related workflows. Each person's project context, evidence and decisions remain their own.
 
 Reply in Chinese by default when the user writes in Chinese. Preserve useful English academic, research and design terms where translation would reduce precision.
 

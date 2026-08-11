@@ -1,8 +1,9 @@
 # Threading Dashboard
 
-Threading is a complete local reasoning workspace with an optional installable
-skill. It organises derived project knowledge without pretending that imported
-history is current or that a framework is evidence.
+Threading is an Agent-native, evidence-led project workflow for Research and
+Design. It can start a project, accompany its full lifecycle or join an
+already-developed project. The local Managed Workspace holds the project's
+working knowledge and history.
 
 ## Welcome view
 
@@ -13,22 +14,27 @@ can do:
 THREADING / WELCOME
 ────────────────────────────────────────────────────────────────
 I can help you:
-  1. adopt an existing complex project
-  2. identify and confirm its Current State
-  3. organise derived knowledge from Figma, files and chat history
-  4. trace evidence → decision → prototype → test → iteration
-  5. use the optional GSA Pack for methods and Stage 3 work
-  6. show one evidence-supported next move
+  1. start a Research and Design project from a question or brief
+  2. accompany the project through evidence, decisions, prototypes and testing
+  3. join an already-developed project and preserve its history
+  4. identify and confirm its Current State
+  5. organise derived knowledge from Figma, files and chat history
+  6. use the optional GSA Pack for methods and Stage 3 work
+  7. show one evidence-supported next move
 
-Start with: “帮我接管这个现有项目”
+Start with: “帮我新建一个项目空间”, “帮我接管这个现有项目” or “继续推进这个项目”
 ────────────────────────────────────────────────────────────────
 ```
 
 ## Natural-language routes
 
 - `Dashboard`, `status`, `overview`: render the selected project's current view.
+- `帮我新建一个项目空间`, `start a new project`: create or select a Managed
+  Workspace and begin with a question, intended outcome and uncertainty.
 - `帮我接管这个现有项目`, `adopt project`: create or select a Managed Workspace,
   register source pointers, orient bounded sources and propose Current State.
+- `继续推进这个项目`, `continue this project`: read the selected workspace,
+  show its Current State and propose the next evidence-led move.
 - `整理已经导入的聊天记录`, `reconcile chat archive`: register the selected
   Markdown archive, extract candidates and ask before promotion.
 - `帮我整理 Figma 的演变`, `map Figma`: record file/page/frame evolution and
@@ -37,6 +43,8 @@ Start with: “帮我接管这个现有项目”
   Provotyping, Reflection Document and Stage 3 capabilities.
 - `Update Threading`: check tracked changes and remote state before a safe
   fast-forward update.
+- `帮我找出 evidence gaps`, `find the evidence gaps`: report unsupported claims,
+  missing source pointers and pending confirmations in bounded project records.
 - `Threading doctor`: verify core, skill, privacy ignore, project schema and pack.
 
 ## Project view
