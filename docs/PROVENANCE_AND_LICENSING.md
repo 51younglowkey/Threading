@@ -53,7 +53,7 @@ workflows. It must not imply that the pack or Threading is produced, approved,
 sponsored or endorsed by Glasgow School of Art unless explicit permission exists.
 Add a clear independent-project disclaimer before publication.
 
-The visible disclaimer is in `NOTICE.md` and at the top of `README.md`.
+The visible disclaimer is in `docs/NOTICE.md` and at the top of `README.md`.
 
 ## Licence decision — confirmed
 
@@ -63,4 +63,6 @@ The owner accepted the split licence on 2026-08-10. Code, documentation, templat
 - original documentation, templates and paraphrased method guidance: **CC BY 4.0**;
 - third-party course material and the preserved paper: **no project licence**, with provenance and the original rights retained.
 
-The implementation is in `LICENSE`, `LICENSE-DOCS.md` and `THIRD_PARTY_NOTICES.md`. The licence does not override the remaining provenance, copyright or public-release review.
+The implementation is in `LICENSE`, `docs/LICENSE-DOCS.md` and
+`docs/THIRD_PARTY_NOTICES.md`. The licence does not override the remaining
+provenance, copyright or public-release review.

@@ -29,6 +29,23 @@ flowchart LR
 | Threading core | 提供规则、模板、工具、Dashboard 和可安装 Skill |
 | GSA Pack | 可选的、linked read-only 的 Design Innovation academic pack |
 
+## 仓库界面
+
+```text
+core/              reusable rules, templates and skill library
+90_scripts_tools/  adoption, update, Dashboard and indexing tools
+docs/              onboarding and operating guides
+packs/             optional academic packs
+projects/          Managed Workspace templates
+skills/            installable Agent skill
+profiles/          v0.1 migration compatibility
+examples/          synthetic example
+tests/             automated checks
+```
+
+根目录保留 Agent 入口、版本信息、许可证和 README；内部规则与模板集中在
+`core/`，所以 GitHub 首页的文件列表保持短而清晰。
+
 ## 你可以用 Threading 做什么
 
 - 接管一个已经存在、但材料分散的项目；
@@ -40,11 +57,31 @@ flowchart LR
 
 ## 开始使用
 
-1. Clone 这个仓库，并在 Codex Agent 中打开它。
-2. 对 Agent 说：`帮我接管这个现有项目`。
-3. 按引导提供项目名称、材料位置和需要使用的来源；原始材料继续留在原位置。
-4. 需要 Design Innovation 学术方法时，说：`加载 GSA Pack`。
-5. 日常工作可以直接说：`Dashboard`、`整理已经导入的聊天记录`、`帮我整理 Figma 的演变` 或 `Update Threading`。
+第一次使用：
+
+```bash
+git clone https://github.com/51younglowkey/Threading.git
+cd Threading
+python3 90_scripts_tools/threading/install_skill.py
+```
+
+然后在 Codex Agent 中说：`帮我接管这个现有项目`。按引导提供项目名称、材料位置和
+需要使用的来源；原始材料继续留在原位置。
+
+更新到 GitHub 最新版本：
+
+```bash
+git pull --ff-only origin main
+```
+
+需要安全检查更新状态时，可以运行：
+
+```bash
+python3 90_scripts_tools/threading/update_threading.py
+```
+
+日常工作可以直接说：`Dashboard`、`整理已经导入的聊天记录`、`帮我整理 Figma 的演变`、
+`加载 GSA Pack` 或 `Update Threading`。
 
 完整 onboarding 和旧版本升级说明见 [QUICKSTART](docs/QUICKSTART.md) 与
 [EXISTING_USER_UPGRADE](docs/EXISTING_USER_UPGRADE.md)。

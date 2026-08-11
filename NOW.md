@@ -37,12 +37,12 @@ Threading
 - `CLAUDE.md` — Claude Code route
 - `DASHBOARD.md` — text Dashboard and natural-language routes
 - `docs/AGENT_ONBOARDING.md` — existing-project adoption and new-project route
-- `00_system_context/workflow_rules.md` — evidence and decision rules
-- `00_system_context/EXTRACTION_STATUS.md` — what was removed and the v0.2 status
-- `20_skill_library/skill_index.md` — method and framework routing
-- `20_skill_library/skills/apply-taught-methods/` — generic method application route
+- `core/system_context/workflow_rules.md` — evidence and decision rules
+- `core/system_context/EXTRACTION_STATUS.md` — what was removed and the v0.2 status
+- `core/skill_library/skill_index.md` — method and framework routing
+- `core/skill_library/skills/apply-taught-methods/` — generic method application route
 - `packs/gsa/PACK.md` — optional Design Innovation academic pack, including ILO/rubric guidance
-- `02_templates/` — neutral starting templates
+- `core/templates/` — neutral starting templates
 - `docs/QUICKSTART.md` — first-use route
 - `profiles/_template/` — legacy v0.1 profile scaffold (migration only)
 - `projects/_template/` — full Managed Workspace scaffold

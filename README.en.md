@@ -29,6 +29,24 @@ flowchart LR
 | Threading core | Provides rules, templates, tools, Dashboard and an installable Skill |
 | GSA Pack | An optional linked, read-only Design Innovation academic pack |
 
+## Repository surface
+
+```text
+core/              reusable rules, templates and skill library
+90_scripts_tools/  adoption, update, Dashboard and indexing tools
+docs/              onboarding and operating guides
+packs/             optional academic packs
+projects/          Managed Workspace templates
+skills/            installable Agent skill
+profiles/          v0.1 migration compatibility
+examples/          synthetic example
+tests/             automated checks
+```
+
+The root keeps Agent entry points, version information, licences and the two
+README files. Internal rules and templates are grouped under `core/` so the
+GitHub landing page stays short and legible.
+
 ## What Threading helps with
 
 - adopt an existing project whose material is spread across several places;
@@ -40,13 +58,32 @@ flowchart LR
 
 ## Start here
 
-1. Clone this repository and open it in Codex Agent.
-2. Say: `adopt this existing project`.
-3. Provide the project title, material locations and the sources you want to use;
-   original material stays in its source location.
-4. When Design Innovation methods are relevant, say: `load GSA Pack`.
-5. Useful everyday prompts include `Dashboard`, `reconcile chat archive`, `map Figma`
-   and `Update Threading`.
+First use:
+
+```bash
+git clone https://github.com/51younglowkey/Threading.git
+cd Threading
+python3 90_scripts_tools/threading/install_skill.py
+```
+
+Then open the repository in Codex Agent and say: `adopt this existing project`.
+Provide the project title, material locations and the sources you want to use;
+original material stays in its source location.
+
+Update to the latest GitHub version:
+
+```bash
+git pull --ff-only origin main
+```
+
+For a safe update check, run:
+
+```bash
+python3 90_scripts_tools/threading/update_threading.py
+```
+
+Useful everyday prompts include `Dashboard`, `reconcile chat archive`, `map Figma`,
+`load GSA Pack` and `Update Threading`.
 
 See [QUICKSTART](docs/QUICKSTART.md) and
 [EXISTING_USER_UPGRADE](docs/EXISTING_USER_UPGRADE.md) for onboarding and legacy
