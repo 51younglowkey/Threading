@@ -1,7 +1,7 @@
 # Threading — Extraction Status
 
 Created: 2026-08-10
-Status: v0.2 release prepared locally; public branch/tag verification pending
+Status: v0.2.0 released publicly; main, tag and GitHub release verified
 
 ## Purpose
 

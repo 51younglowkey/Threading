@@ -10,6 +10,8 @@ Current status: **v0.2 Managed Workspace implementation with an installable
 Threading skill, Current State, linked GSA Pack, existing-chat reconciliation
 and safe update/migration tools**.
 
+Public release: **v0.2.0** — [GitHub release](https://github.com/51younglowkey/Threading/releases/tag/v0.2.0)
+
 Release decision (2026-08-11): the owner chose a public GitHub repository. Users
 will view, clone or download Threading without collaborator access; changes should
 come through forks and pull requests. Complete local project knowledge lives in
