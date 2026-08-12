@@ -12,6 +12,7 @@ ROOT = Path(__file__).resolve().parents[1]
 PYTHON = sys.executable
 WORKSPACE_TOOLS = ROOT / "90_scripts_tools" / "project_workspace"
 THREADING_TOOLS = ROOT / "90_scripts_tools" / "threading"
+UPGRADE_TOOL = WORKSPACE_TOOLS / "upgrade_workspaces.py"
 
 
 def run(script: Path, *args: str, expect: int = 0) -> subprocess.CompletedProcess[str]:
@@ -169,23 +170,187 @@ class WorkspaceToolsTest(unittest.TestCase):
 
     def test_skill_symlink_install_and_doctor(self) -> None:
         project = self.adopt(pack="gsa")
-        codex_home = self.root / "codex-home"
+        user_home = self.root / "user-home"
+        legacy = user_home / ".codex" / "skills" / "threading"
+        legacy.parent.mkdir(parents=True)
+        legacy.symlink_to(ROOT / "skills" / "threading", target_is_directory=True)
         run(
             THREADING_TOOLS / "install_skill.py",
-            "--codex-home",
-            str(codex_home),
+            "--home",
+            str(user_home),
         )
-        installed = codex_home / "skills" / "threading"
-        self.assertTrue(installed.is_symlink())
+        codex_skill = user_home / ".agents" / "skills" / "threading"
+        claude_skill = user_home / ".claude" / "skills" / "threading"
+        self.assertTrue(codex_skill.is_symlink())
+        self.assertTrue(claude_skill.is_symlink())
+        self.assertFalse(legacy.exists() or legacy.is_symlink())
+        repeated = run(
+            THREADING_TOOLS / "install_skill.py",
+            "--home",
+            str(user_home),
+        )
+        self.assertEqual(repeated.stdout.count("already linked"), 2)
         result = run(
             THREADING_TOOLS / "doctor.py",
-            "--codex-home",
-            str(codex_home),
+            "--home",
+            str(user_home),
             "--project",
             str(project),
         )
         self.assertIn("Summary:", result.stdout)
         self.assertNotIn("FAIL", result.stdout)
+
+    def test_skill_registration_preserves_conflicting_installation(self) -> None:
+        user_home = self.root / "conflict-home"
+        existing = user_home / ".agents" / "skills" / "threading"
+        existing.mkdir(parents=True)
+        marker = existing / "SKILL.md"
+        marker.write_text("existing skill\n", encoding="utf-8")
+
+        result = run(
+            THREADING_TOOLS / "install_skill.py",
+            "--home",
+            str(user_home),
+            expect=1,
+        )
+
+        self.assertIn("It was not changed", result.stderr)
+        self.assertEqual(marker.read_text(encoding="utf-8"), "existing skill\n")
+        self.assertFalse((user_home / ".claude" / "skills" / "threading").exists())
+
+    def test_compatibility_upgrade_repairs_without_overwriting(self) -> None:
+        project = self.adopt(pack="gsa")
+        current_path = project / "CURRENT.md"
+        evidence_path = project / "evidence" / "evidence_log.md"
+        current_before = current_path.read_text(encoding="utf-8")
+        evidence_path.write_text(
+            evidence_path.read_text(encoding="utf-8") + "\nOWNER RECORD — preserve exactly\n",
+            encoding="utf-8",
+        )
+        missing = project / "sources" / "chats" / "candidate_records.md"
+        missing.unlink()
+        state_path = project / "threading.json"
+        state = json.loads(state_path.read_text(encoding="utf-8"))
+        state["schema_version"] = 1
+        state["threading_version"] = "0.1.0"
+        state_path.write_text(json.dumps(state, indent=2) + "\n", encoding="utf-8")
+        report = self.root / "upgrade-report.md"
+
+        check = run(
+            UPGRADE_TOOL,
+            "--project",
+            str(project),
+            "--allow-external-project",
+            "--report",
+            str(report),
+        )
+        self.assertIn("Mode: CHECK", check.stdout)
+        self.assertFalse(missing.exists())
+        self.assertFalse(report.exists())
+
+        run(
+            UPGRADE_TOOL,
+            "--project",
+            str(project),
+            "--allow-external-project",
+            "--apply",
+            "--report",
+            str(report),
+        )
+        self.assertTrue(missing.is_file())
+        self.assertEqual(current_before, current_path.read_text(encoding="utf-8"))
+        self.assertIn("OWNER RECORD — preserve exactly", evidence_path.read_text(encoding="utf-8"))
+        upgraded = json.loads(state_path.read_text(encoding="utf-8"))
+        self.assertEqual(upgraded["schema_version"], 2)
+        self.assertEqual(upgraded["threading_version"], (ROOT / "VERSION").read_text().strip())
+        self.assertTrue(upgraded["upgrade_history"])
+        self.assertTrue(report.is_file())
+        self.assertTrue(any((project / "history" / "upgrades").glob("*.md")))
+
+    def test_compatibility_upgrade_attaches_legacy_for_review(self) -> None:
+        project = self.adopt(slug="legacy-project", pack="none")
+        legacy = self.root / "legacy-project"
+        legacy.mkdir()
+        source_context = "# Legacy Context\n\nWorking question: What changed?\n"
+        (legacy / "context.md").write_text(source_context, encoding="utf-8")
+        report = self.root / "legacy-upgrade-report.md"
+
+        run(
+            UPGRADE_TOOL,
+            "--project",
+            str(project),
+            "--legacy-profile",
+            str(legacy),
+            "--output-root",
+            str(self.projects),
+            "--allow-external-project",
+            "--allow-external-root",
+            "--allow-external-legacy",
+            "--apply",
+            "--report",
+            str(report),
+        )
+
+        review = project / "sources" / "legacy" / "legacy-project"
+        self.assertEqual(source_context, (legacy / "context.md").read_text(encoding="utf-8"))
+        self.assertEqual(source_context, (review / "context.md").read_text(encoding="utf-8"))
+        self.assertTrue((review / "MIGRATION_REVIEW.md").is_file())
+        self.assertIn(
+            str(legacy),
+            (project / "sources" / "source_registry.md").read_text(encoding="utf-8"),
+        )
+        state = json.loads((project / "threading.json").read_text(encoding="utf-8"))
+        self.assertIn(str(legacy.resolve()), state["legacy_sources"])
+
+    def test_compatibility_upgrade_creates_workspace_from_legacy(self) -> None:
+        legacy_root = self.root / "legacy-root"
+        legacy = legacy_root / "new-legacy-project"
+        legacy.mkdir(parents=True)
+        (legacy / "context.md").write_text(
+            "# Project Context\n\nProject or module: New Legacy Project\n",
+            encoding="utf-8",
+        )
+        report = self.root / "new-legacy-report.md"
+
+        run(
+            UPGRADE_TOOL,
+            "--legacy-profile",
+            str(legacy),
+            "--output-root",
+            str(self.projects),
+            "--allow-external-root",
+            "--allow-external-legacy",
+            "--apply",
+            "--report",
+            str(report),
+        )
+
+        project = self.projects / "new-legacy-project"
+        self.assertTrue((project / "CURRENT.md").is_file())
+        self.assertTrue((project / "legacy_snapshot" / "context.md").is_file())
+        self.assertIn(
+            "needs confirmation", (project / "CURRENT.md").read_text(encoding="utf-8")
+        )
+        self.assertTrue((legacy / "context.md").is_file())
+        self.assertTrue(report.is_file())
+
+    def test_compatibility_upgrade_blocks_newer_schema(self) -> None:
+        project = self.adopt(slug="future-project", pack="none")
+        state_path = project / "threading.json"
+        state = json.loads(state_path.read_text(encoding="utf-8"))
+        state["schema_version"] = 99
+        state_path.write_text(json.dumps(state, indent=2) + "\n", encoding="utf-8")
+
+        result = run(
+            UPGRADE_TOOL,
+            "--project",
+            str(project),
+            "--allow-external-project",
+            expect=1,
+        )
+        self.assertIn("BLOCKED", result.stdout)
+        unchanged = json.loads(state_path.read_text(encoding="utf-8"))
+        self.assertEqual(unchanged["schema_version"], 99)
 
 
 if __name__ == "__main__":

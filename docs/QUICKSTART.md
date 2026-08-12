@@ -10,13 +10,13 @@ git clone https://github.com/51younglowkey/Threading.git
 cd Threading
 ```
 
-## 2. Install the optional natural-language skill
+## 2. Open the Threading workspace / 打开 Threading
 
-```bash
-python3 90_scripts_tools/threading/install_skill.py
-```
-
-Start a new Codex task after installation.
+Open the cloned `Threading` folder as the workspace in Codex or Claude Code.
+On the first interaction, the Agent reads the project instructions and
+automatically registers the Threading Skill in the supported user-level Codex
+and Claude Code Skill locations. Approve the single bounded file permission if
+your Agent environment requests it.
 
 ## 3. Choose an entry point / 选择入口
 
@@ -86,6 +86,9 @@ linked GSA Pack status and one next move.
 
 ```text
 Update Threading
+升级 Threading，并接续我已有的项目
 ```
 
-Or use `90_scripts_tools/threading/update_threading.py`. See `docs/UPDATING.md`.
+The Agent checks the Core and existing project compatibility before applying
+changes. Or use `90_scripts_tools/threading/update_threading.py`. See
+`docs/UPDATING.md`.

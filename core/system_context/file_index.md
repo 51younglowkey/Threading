@@ -1,6 +1,6 @@
 # Threading File Index
 
-Generated: 2026-08-12 00:17
+Generated: 2026-08-12 02:36
 
 | File path | File type | Likely role | Project / sub-project | Last modified |
 |---|---|---|---|---|
@@ -21,17 +21,18 @@ Generated: 2026-08-12 00:17
 | `90_scripts_tools/project_workspace/migrate_legacy_profile.py` | py | Working file | Scripts / tools | 2026-08-11 22:28 |
 | `90_scripts_tools/project_workspace/reconcile_chat_archive.py` | py | Working file | Scripts / tools | 2026-08-11 22:28 |
 | `90_scripts_tools/project_workspace/render_dashboard.py` | py | Working file | Scripts / tools | 2026-08-11 22:28 |
-| `90_scripts_tools/threading/doctor.py` | py | Working file | Scripts / tools | 2026-08-11 22:28 |
-| `90_scripts_tools/threading/install_skill.py` | py | Working file | Scripts / tools | 2026-08-11 22:28 |
-| `90_scripts_tools/threading/update_threading.py` | py | Working file | Scripts / tools | 2026-08-11 22:28 |
-| `AGENTS.md` | md | Working file | Threading | 2026-08-12 00:16 |
-| `CLAUDE.md` | md | Working file | Threading | 2026-08-12 00:16 |
-| `DASHBOARD.md` | md | Working file | Threading | 2026-08-12 00:16 |
+| `90_scripts_tools/project_workspace/upgrade_workspaces.py` | py | Working file | Scripts / tools | 2026-08-12 02:20 |
+| `90_scripts_tools/threading/doctor.py` | py | Working file | Scripts / tools | 2026-08-12 02:21 |
+| `90_scripts_tools/threading/install_skill.py` | py | Working file | Scripts / tools | 2026-08-12 01:57 |
+| `90_scripts_tools/threading/update_threading.py` | py | Working file | Scripts / tools | 2026-08-12 02:22 |
+| `AGENTS.md` | md | Working file | Threading | 2026-08-12 02:29 |
+| `CLAUDE.md` | md | Working file | Threading | 2026-08-12 02:29 |
+| `DASHBOARD.md` | md | Working file | Threading | 2026-08-12 02:20 |
 | `LICENSE` | directory/no extension | Working file | Threading | 2026-08-11 18:43 |
-| `NOW.md` | md | Working file | Threading | 2026-08-12 00:16 |
-| `README.en.md` | md | Working file | Threading | 2026-08-12 00:13 |
-| `README.md` | md | Working file | Threading | 2026-08-12 00:13 |
-| `VERSION` | directory/no extension | Working file | Threading | 2026-08-11 22:28 |
+| `NOW.md` | md | Working file | Threading | 2026-08-12 02:35 |
+| `README.en.md` | md | Working file | Threading | 2026-08-12 02:34 |
+| `README.md` | md | Working file | Threading | 2026-08-12 02:29 |
+| `VERSION` | directory/no extension | Working file | Threading | 2026-08-12 02:23 |
 | `core/skill_library/README.md` | md | Working file | Threading | 2026-08-11 22:52 |
 | `core/skill_library/frontdesk/dialogue_scope_current.md` | md | Log | Threading | 2026-08-11 22:52 |
 | `core/skill_library/frontdesk/frontdesk_framework_fix_mode.md` | md | Working file | Threading | 2026-08-11 22:52 |
@@ -42,9 +43,9 @@ Generated: 2026-08-12 00:17
 | `core/skill_library/skills/retrospective_warning_system.md` | md | Working file | Threading | 2026-08-11 22:52 |
 | `core/skill_library/skills/threading-dashboard/SKILL.md` | md | Working file | Threading | 2026-08-11 22:52 |
 | `core/skill_library/templates/skill_template.md` | md | Template | Threading | 2026-08-11 22:52 |
-| `core/system_context/EXTRACTION_STATUS.md` | md | Working file | System context | 2026-08-11 22:52 |
-| `core/system_context/file_index.md` | md | Working file | System context | 2026-08-11 22:52 |
-| `core/system_context/repository_architecture.md` | md | Working file | System context | 2026-08-12 00:16 |
+| `core/system_context/EXTRACTION_STATUS.md` | md | Working file | System context | 2026-08-12 02:35 |
+| `core/system_context/file_index.md` | md | Working file | System context | 2026-08-12 02:30 |
+| `core/system_context/repository_architecture.md` | md | Working file | System context | 2026-08-12 00:19 |
 | `core/system_context/workflow_rules.md` | md | Working file | System context | 2026-08-11 22:52 |
 | `core/templates/consent_form_template.md` | md | Template | Template library | 2026-08-11 22:52 |
 | `core/templates/evidence_record_template.md` | md | Template | Template library | 2026-08-11 22:52 |
@@ -55,19 +56,20 @@ Generated: 2026-08-12 00:17
 | `core/templates/reading_note_template.md` | md | Template | Template library | 2026-08-11 22:52 |
 | `core/templates/tutorial_note_template.md` | md | Template | Template library | 2026-08-11 22:52 |
 | `core/templates/weekly_progress_log_template.md` | md | Template | Template library | 2026-08-11 22:52 |
-| `docs/AGENT_ONBOARDING.md` | md | Working file | Threading | 2026-08-12 00:15 |
-| `docs/CAPABILITIES.md` | md | Working file | Threading | 2026-08-12 00:15 |
-| `docs/CHANGELOG.md` | md | Log | Threading | 2026-08-11 22:52 |
+| `docs/AGENT_ONBOARDING.md` | md | Working file | Threading | 2026-08-12 00:19 |
+| `docs/CAPABILITIES.md` | md | Working file | Threading | 2026-08-12 02:20 |
+| `docs/CHANGELOG.md` | md | Log | Threading | 2026-08-12 02:35 |
 | `docs/CHAT_RECONCILIATION.md` | md | Working file | Threading | 2026-08-11 22:28 |
-| `docs/EXISTING_USER_UPGRADE.md` | md | Working file | Threading | 2026-08-11 22:28 |
+| `docs/COMPATIBILITY_UPGRADE.md` | md | Working file | Threading | 2026-08-12 02:29 |
+| `docs/EXISTING_USER_UPGRADE.md` | md | Working file | Threading | 2026-08-12 02:18 |
 | `docs/FIGMA_EVOLUTION.md` | md | Working file | Threading | 2026-08-11 22:28 |
 | `docs/LICENSE-DOCS.md` | md | Working file | Threading | 2026-08-11 22:52 |
 | `docs/NOTICE.md` | md | Working file | Threading | 2026-08-11 22:52 |
 | `docs/PROVENANCE_AND_LICENSING.md` | md | Working file | Threading | 2026-08-11 22:52 |
-| `docs/PUBLICATION_CHECKLIST.md` | md | Checklist | Threading | 2026-08-11 22:30 |
-| `docs/QUICKSTART.md` | md | Working file | Threading | 2026-08-12 00:16 |
+| `docs/PUBLICATION_CHECKLIST.md` | md | Checklist | Threading | 2026-08-12 02:35 |
+| `docs/QUICKSTART.md` | md | Working file | Threading | 2026-08-12 02:20 |
 | `docs/THIRD_PARTY_NOTICES.md` | md | Working file | Threading | 2026-08-11 22:52 |
-| `docs/UPDATING.md` | md | Working file | Threading | 2026-08-11 22:28 |
+| `docs/UPDATING.md` | md | Working file | Threading | 2026-08-12 02:29 |
 | `examples/minimal-project/README.md` | md | Working file | Threading | 2026-08-11 22:28 |
 | `packs/gsa/PACK.md` | md | Working file | Threading | 2026-08-11 22:52 |
 | `packs/gsa/README.md` | md | Working file | Threading | 2026-08-11 22:28 |
@@ -101,8 +103,8 @@ Generated: 2026-08-12 00:17
 | `projects/_template/sources/local-files/README.md` | md | Working file | Threading | 2026-08-11 22:28 |
 | `projects/_template/sources/source_registry.md` | md | Working file | Threading | 2026-08-11 22:28 |
 | `projects/_template/threading.json` | json | Working file | Threading | 2026-08-11 22:28 |
-| `skills/threading/SKILL.md` | md | Working file | Threading | 2026-08-12 00:15 |
+| `skills/threading/SKILL.md` | md | Working file | Threading | 2026-08-12 02:22 |
 | `skills/threading/agents/openai.yaml` | yaml | Working file | Threading | 2026-08-11 22:28 |
-| `skills/threading/references/routes.md` | md | Working file | Threading | 2026-08-12 00:15 |
-| `skills/threading/references/workspace-schema.md` | md | Working file | Threading | 2026-08-11 22:28 |
-| `tests/test_workspace_tools.py` | py | Working file | Threading | 2026-08-11 22:28 |
+| `skills/threading/references/routes.md` | md | Working file | Threading | 2026-08-12 02:22 |
+| `skills/threading/references/workspace-schema.md` | md | Working file | Threading | 2026-08-12 02:18 |
+| `tests/test_workspace_tools.py` | py | Working file | Threading | 2026-08-12 02:20 |

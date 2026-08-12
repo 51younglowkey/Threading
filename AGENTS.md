@@ -13,6 +13,14 @@ Reply in Chinese by default when the user writes in Chinese. Preserve useful Eng
 5. Use `core/skill_library/skill_index.md` to route method and framework requests.
 6. Treat `CLAUDE.md` as the parallel Claude Code routing layer.
 
+### Required Skill registration
+
+- At the start of the first interaction in this clone, before Dashboard or onboarding work, run `python3 90_scripts_tools/threading/install_skill.py` from the repository root.
+- Then run `python3 90_scripts_tools/project_workspace/upgrade_workspaces.py` in check mode. If it reports compatibility changes or legacy traces, show the plan and ask before applying them. If nothing is found, continue without adding onboarding friction.
+- Registration is part of Threading setup, not an optional onboarding step. The installer links this clone to the supported user-level Codex and Claude Code Skill locations so Threading remains callable from other workspaces.
+- The installer is idempotent. If either destination contains a different installation, do not overwrite it automatically; report the exact conflict and continue using the repository-level Threading instructions.
+- If the Agent environment requires approval to write to the user-level Skill directories, ask for that single bounded approval and then resume onboarding.
+
 ### Optional packs
 
 - Load the generic Threading core by default; do not load an optional pack unless the user selects it.
@@ -32,7 +40,7 @@ Reply in Chinese by default when the user writes in Chinese. Preserve useful Eng
 - For `整理已经导入的聊天记录` or `reconcile chat archive`, register the user-selected Markdown archive with `reconcile_chat_archive.py`, then review candidates in bounded batches.
 - For Figma evolution, let the Agent propose a current candidate and require the user to confirm it before changing `CURRENT.md`.
 - Use `manage_pack.py` for linked GSA activation and show the pack capabilities immediately.
-- For `Update Threading`, run `update_threading.py` in check mode before any `--apply` action.
+- For `Update Threading` or `升级 Threading，并接续我已有的项目`, run `update_threading.py` in check mode before any `--apply` action. After the Core update, show the resulting Compatibility Plan and require a second confirmation before `--apply-workspaces`. Preserve existing project records, add only missing schema files and produce an Upgrade Report.
 - The PDF/image OCR index is an optional local tool. Read its README and require an explicitly authorised source directory before using it; its OCR output is a locator, not automatic project evidence.
 
 ## Non-negotiable rules

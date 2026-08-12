@@ -1,7 +1,7 @@
 # Threading — Extraction Status
 
 Created: 2026-08-10
-Status: v0.2.0 released publicly; main, tag and GitHub release verified
+Status: v0.3.0 release prepared after privacy, compatibility and clean-clone review
 
 ## Purpose
 
@@ -66,3 +66,10 @@ adoption, legacy migration, Figma evolution candidates, chat reconciliation,
 linked read-only GSA activation, safe update checks and a local doctor. The
 legacy `profiles/` layer remains only as a migration path; it is not the default
 project storage model.
+
+## Current v0.3 status — 2026-08-12
+
+The v0.3 implementation adds non-destructive compatibility upgrades, preservation
+reports and automatic user-level Skill registration for both Codex and Claude
+Code. Existing Managed Workspace records remain local and are upgraded only
+after a visible compatibility plan and user confirmation.

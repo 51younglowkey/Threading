@@ -32,13 +32,13 @@ This checklist is a gate, not proof that release is safe.
 
 ## Final decision
 
-Release status: v0.2.0 released and verified on the public `main` branch and GitHub release
+Release status: v0.3.0 prepared for the public `main` branch and GitHub release
 
-Release: https://github.com/51younglowkey/Threading/releases/tag/v0.2.0
+Release: https://github.com/51younglowkey/Threading/releases/tag/v0.3.0
 
 Reviewer:
 
-Date:
+Date: 2026-08-12
 
 - Optional OCR dependencies are intentionally not part of the core installation.
 - Future updates must repeat the privacy, provenance and Git-history review.
