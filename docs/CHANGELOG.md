@@ -1,5 +1,12 @@
 # Threading Changelog
 
+## 0.3.0 — 2026-08-12
+
+- Added non-destructive compatibility upgrades for existing Managed Workspaces.
+- Added legacy-profile attachment, missing-schema repair and Upgrade Reports.
+- Connected `Update Threading` to project compatibility checks and migration.
+- Registered the Threading Skill for both Codex and Claude Code user scopes.
+
 ## 0.2.0 — 2026-08-11
 
 - Added full local Managed Workspaces under `projects/local/<slug>/`.

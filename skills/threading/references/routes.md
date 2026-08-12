@@ -103,8 +103,21 @@ describe the pack as official or endorsed by GSA.
 
 Run `update_threading.py` without `--apply` first. Refuse an automatic update
 when tracked core files are dirty, the branch has diverged or a fast-forward is
-not possible. Local Managed Workspaces are ignored and must not be modified by
-the Git update.
+not possible. The Git update must not modify ignored local Managed Workspaces.
+
+After the core update, run `upgrade_workspaces.py` in check mode and show the
+compatibility plan. Do not apply workspace changes in the same unreviewed step
+as a newly downloaded Core schema. With owner approval, apply it to:
+
+- preserve every existing `CURRENT.md`, evidence, decision and iteration record;
+- add only schema files that are missing;
+- refresh `threading.json` and linked-pack version metadata;
+- migrate a legacy profile into a new Managed Workspace when no destination exists;
+- attach a review-only legacy copy when a matching Managed Workspace already exists;
+- write an upgrade report and project-local upgrade history.
+
+Never scan broad external folders, overwrite project knowledge or promote
+legacy/chat content into Current State automatically.
 
 Use `migrate_legacy_profile.py` for old `profiles/local/` projects. It copies
 known records into a new Managed Workspace and leaves the legacy profile intact.

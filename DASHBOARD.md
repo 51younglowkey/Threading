@@ -41,8 +41,9 @@ Start with: “帮我新建一个项目空间”, “帮我接管这个现有项
   propose a current candidate for user confirmation.
 - `加载 GSA Pack`, `load pack gsa`: enable the linked pack and show its methods,
   Provotyping, Reflection Document and Stage 3 capabilities.
-- `Update Threading`: check tracked changes and remote state before a safe
-  fast-forward update.
+- `Update Threading`, `升级 Threading，并接续我已有的项目`: check tracked
+  changes and remote state, then preview compatibility repairs and legacy-trace
+  connections before applying them.
 - `帮我找出 evidence gaps`, `find the evidence gaps`: report unsupported claims,
   missing source pointers and pending confirmations in bounded project records.
 - `Threading doctor`: verify core, skill, privacy ignore, project schema and pack.

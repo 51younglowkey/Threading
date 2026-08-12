@@ -103,6 +103,7 @@ Dashboard
 
 ```text
 Update Threading
+升级 Threading，并接续我已有的项目
 Threading doctor
 迁移我的旧 Threading profile
 显示当前 Threading 和 GSA Pack 版本

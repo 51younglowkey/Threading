@@ -33,8 +33,10 @@ public core, local project knowledge and raw sources separate.
   `references/routes.md#figma-evolution`.
 - `load pack gsa`, `use GSA Pack`: enable the linked pack for the selected
   workspace, then show its capabilities and version.
-- `update Threading`: run the safe check first; apply only after reporting local
-  tracked changes and the proposed update.
+- `update Threading`, `升级 Threading，并接续我已有的项目`: run the safe core
+  update check first. After approval, apply the Core update and show the
+  resulting compatibility plan. Apply workspaces only after the user has seen
+  that plan; report Managed Workspace repairs and legacy migrations.
 - `what can you do`, `help`: render the concise capability view in
   `references/routes.md#capability-view`.
 - `evidence gaps`, `find the evidence gaps`, `找出证据缺口`: inspect bounded

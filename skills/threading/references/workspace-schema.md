@@ -17,6 +17,8 @@ projects/local/<slug>/
 ├── evidence/evidence_log.md
 ├── decisions/decision_log.md
 ├── iterations/iteration_log.md
+├── history/upgrades/ (created when needed)
+├── sources/legacy/ (review-only copies created when needed)
 └── outputs/README.md
 ```
 
@@ -27,3 +29,8 @@ the evidence, decision or iteration record.
 Project states use `candidate`, `confirmed`, `rejected`, `superseded` and
 `unknown`. Only user-confirmed material may become current. The Agent may propose
 changes but must preserve provenance and ask before promotion.
+
+Compatibility upgrades may add missing scaffold files and update
+`threading.json` metadata. They never overwrite existing project records.
+Legacy material attached under `sources/legacy/` remains `candidate` until the
+project owner reviews and promotes specific items.

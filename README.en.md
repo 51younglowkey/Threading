@@ -3,137 +3,163 @@
 [中文版 →](README.md)
 
 > **Threading is an Agent-native, evidence-led project workflow for Research and Design.**
-> It can enter at the beginning of a project, accompany its full lifecycle, or join
-> a project that already has substantial material: `Question → Sources → Evidence
-> → Insight → Decision → Prototype → Testing → Outcome`.
+> It connects questions, research, decisions, prototypes and testing into a working
+> chain that can keep a Research and Design project moving.
 
-It connects project questions, sources, evidence, insights, decisions, prototypes,
-tests and outputs so a project can become explainable, deliverable and iterable.
+Threading runs directly in Codex and Claude Code. The repository is the complete
+project workflow; the included Threading Skill makes that workflow callable from
+other Agent workspaces.
 
 ## At a glance
 
 ```mermaid
 flowchart LR
-    A[Start a project] --> B[Threading workflow]
-    A2[Join an existing project] --> B
-    A3[Continue a project] --> B
+    A[Start a research project] --> B[Threading workflow]
+    A2[Bring in an existing research project] --> B
+    A3[Continue a research project] --> B
     B --> C[Question & sources]
     C --> D[Evidence & insight]
     D --> E[Decision & criteria]
     E --> F[Prototype · testing · outcome]
-    G[GSA Pack<br/>optional] -.-> B
+    G[Optional GSA Pack] -.-> B
 ```
 
 | Layer | Role |
 | --- | --- |
-| Project workflow | Moves from questions and goals to evidence, decisions, prototypes, testing and outcomes |
-| Managed Workspace | Stores source pointers, Current State, derived knowledge, evidence, decisions and outputs |
-| Threading core | Provides rules, templates, tools, Dashboard and an installable Skill |
-| GSA Pack | An optional linked, read-only Design Innovation academic pack |
+| Research project | The user's own Research and Design work: questions, research, design, prototypes, testing and outcomes |
+| Managed Workspace | Stores the research project's context, evidence, decisions, iteration records and outputs |
+| Threading core | Provides the workflow, rules, methods, templates, Dashboard and local project space |
 
-## Repository surface
+## What you can do with Threading
 
-```text
-core/              reusable rules, templates and skill library
-90_scripts_tools/  adoption, update, Dashboard and indexing tools
-docs/              onboarding and operating guides
-packs/             optional academic packs
-projects/          Managed Workspace templates
-skills/            installable Agent skill
-profiles/          v0.1 migration compatibility
-examples/          synthetic example
-tests/             automated checks
-```
+Here, a “research project” means the user's own Research and Design project,
+such as a design research, service design or product design project.
 
-The root keeps Agent entry points, version information, licences and the two
-README files. Internal rules and templates are grouped under `core/` so the
-GitHub landing page stays short and legible.
+- **Move a complete Research and Design project forward:** begin with a brief, research question or existing progress, then continue through design development, prototyping, testing and outcome.
+- **Clarify research and design directions:** compare research questions, design opportunities or concept directions, showing the evidence, risks and open questions behind each one.
+- **Turn research material into usable insights:** distinguish evidence, interpretation and insight across interviews, observations, literature, PDFs, images and project records, then form Actionable Insights without presenting assumptions as findings.
+- **Move from insight to design:** translate Insights into design opportunities, design criteria, concepts, prototype briefs and testable questions.
+- **Find gaps in design progress:** identify broken links between evidence and insight, criteria and concepts, or prototypes and testing, including unsupported claims and assumptions.
+- **Design and review prototype testing and iteration:** define what a prototype can test, separate participant response, researcher interpretation and design decision, then shape the next iteration.
+- **Review project communication and evidence:** check whether a Project Narrative, presentation, project document or reflection clearly connects its argument, evidence, decisions, limitations and design progress.
+- **Select and apply Research and Design methods:** choose methods for a specific research question and make their inputs, outputs, limitations and next verification step explicit.
+- **Keep a traceable project memory:** let later prototypes, tests, presentations and documents return to earlier evidence, decisions and changes of direction without repeatedly reconstructing the whole project.
 
-## What Threading helps with
+## Get started
 
-- start a research, service design, product design or academic project from scratch;
-- establish questions, sources and an evidence-led way of progressing early work;
-- join a project that already has Figma, local files or chat history;
-- continue a project workflow across its lifecycle;
-- propose a current Figma candidate for owner confirmation;
-- reconcile imported ChatGPT Markdown while preserving the raw archive;
-- connect evidence, interpretation, decisions, prototypes and testing;
-- give each school project its own local Managed Workspace;
-- keep writing, prototyping and next actions connected to project knowledge.
-
-## Start here
-
-First use:
+### 1. Clone
 
 ```bash
 git clone https://github.com/51younglowkey/Threading.git
 cd Threading
-python3 90_scripts_tools/threading/install_skill.py
 ```
 
-Then open the repository in Codex Agent and choose an entry point:
+### 2. Open Threading
+
+Open the cloned `Threading` folder as a workspace in Codex or Claude Code. On
+the first interaction, the Agent automatically registers the Threading Skill at
+user level so it can also be called from other workspaces. If the environment
+asks for file permission, approve it once.
+
+### 3. Bring in your research project
+
+Threading can start from scratch, join work already in progress, or continue an
+existing Managed Workspace:
 
 ```text
-start a new project
-adopt this existing project
-continue this project
+Help me create a new research project workspace
+Help me adopt this existing research project
+Continue this research project
 ```
 
-Provide the project title, project phase, goals and the sources you want to use;
-original material stays in its source location.
+Research material can stay in Figma, local folders, PDFs or its original
+platform. If a project has already developed through ChatGPT, Claude, DeepSeek
+or another large language model, provide either a structured project handoff or
+a complete Markdown conversation export.
 
-Update to the latest GitHub version:
-
-```bash
-git pull --ff-only origin main
-```
-
-For a safe update check, run:
+### Update Threading
 
 ```bash
 python3 90_scripts_tools/threading/update_threading.py
+python3 90_scripts_tools/threading/update_threading.py --apply
+python3 90_scripts_tools/threading/update_threading.py --apply-workspaces
 ```
 
-Useful everyday prompts include `Dashboard`, `find the current direction`,
-`reconcile chat archive`, `map Figma`, `find the evidence gaps`, `load GSA Pack`
-and `Update Threading`.
+The update uses two review gates: it updates the Core and shows the resulting
+Compatibility Plan before preserving project records, adding missing schema
+files and writing an Upgrade Report. You can also say `Update Threading and
+reconnect my existing projects`.
 
-See [QUICKSTART](docs/QUICKSTART.md) and
-[EXISTING_USER_UPGRADE](docs/EXISTING_USER_UPGRADE.md) for onboarding and legacy
-profile migration.
+After updating from v0.2, reopen Threading once. The new Agent instructions will
+automatically check whether existing projects need to be reconnected.
 
-## GSA Pack
+## Example
 
-The GSA Pack is an independent academic pack for Design Innovation-related work.
-It includes:
+The following is synthetic and does not represent real research findings.
 
-- Semester taught-method catalogues;
-- Provotyping;
-- Reflection Document / guidance-video analysis;
-- Stage 3 criteria, rubric and ILO guidance.
+You can say:
 
-It uses linked, read-only activation and follows the Threading core version. Project
-analysis is written to the user's Managed Workspace. The pack carries no official
-endorsement from Glasgow School of Art, and the public repository does not bundle
-course PDFs, assessment forms, guidance videos or student examples.
+```text
+Here are my research summary, two design directions and one round of prototype
+testing notes. Compare the directions and find the missing connections in my
+Design Progress.
+```
+
+Threading will return an analysis shaped like this:
+
+```text
+DESIGN DIRECTION REVIEW
+
+Direction A      [supporting evidence] · [main risk]
+Direction B      [supporting evidence] · [main risk]
+
+Progress gaps
+1. [an insight has not yet been translated into design criteria]
+2. [a concept decision is not traceable to research evidence]
+3. [the prototype test checks usability but not the main project claim]
+
+Revision focus   [the most important connection to strengthen next]
+```
+
+The actual analysis cites only the research material the user has allowed
+Threading to inspect and distinguishes existing evidence, analytical judgement
+and work still requiring verification.
+
+## Optional extension: GSA Pack
+
+The GSA Pack adds two capabilities for Design Innovation-related study:
+
+- **Academic methods:** Semester taught methods, Provotyping and Reflection Document guidance-video analysis.
+- **Criteria-based review:** review presentations, Reflection Documents and other project documents against Stage 3 ILOs, criteria, rubric and evidence requirements, then identify improvement priorities.
+
+```text
+Load the GSA Pack
+Use Design Innovation methods to analyse this research project
+Use the GSA Pack to review my presentation
+Check whether this Reflection Document addresses the relevant ILOs
+```
+
+The GSA Pack is an independent academic aid. It does not represent an official
+position of Glasgow School of Art and does not replace current official
+assessment sources or final assessment.
 
 ## Project boundary
 
-The public repository provides the reusable core. Personal project material,
-participant data, private correspondence and restricted course originals remain in
-the user's controlled local space. Derived project knowledge under `projects/local/`
-stays outside the public repository. Evidence, claims and decisions retain their
-source and confirmation status.
+The public repository provides only the reusable core. Personal research
+material, participant data, private correspondence, complete AI conversations
+and restricted course originals remain in the user's own local space. Threading
+inspects only sources the user has authorised and keeps project knowledge in the
+user's own Managed Workspace.
 
 ## Continue reading
 
-- [Text Dashboard](DASHBOARD.md)
-- [Agent onboarding](docs/AGENT_ONBOARDING.md)
-- [Capabilities](docs/CAPABILITIES.md)
-- [Figma evolution](docs/FIGMA_EVOLUTION.md)
-- [Chat reconciliation](docs/CHAT_RECONCILIATION.md)
-- [Provenance and licensing](docs/PROVENANCE_AND_LICENSING.md)
+- [Quickstart](docs/QUICKSTART.md) — install and start Threading.
+- [Agent onboarding](docs/AGENT_ONBOARDING.md) — bring a research project into Threading.
+- [Text Dashboard](DASHBOARD.md) — view the research project's current working state.
+- [Capabilities](docs/CAPABILITIES.md) — browse the full natural-language capability guide.
+- [Chat reconciliation](docs/CHAT_RECONCILIATION.md) — handle project conversations and full exports from large language models.
+- [Compatibility upgrade](docs/COMPATIBILITY_UPGRADE.md) — update Threading and reconnect existing project records.
+- [GSA Pack](packs/gsa/README.md) — explore Design Innovation methods and criteria-based review.
 
-Threading is an independent project. The GSA Pack is an independent academic
-context and does not represent an official GSA position. Code uses the MIT License;
-original documentation, templates and examples use CC BY 4.0.
+Threading is an independent project. Code uses the MIT License; original
+documentation, templates and examples use CC BY 4.0.

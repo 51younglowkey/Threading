@@ -1,16 +1,18 @@
 # Threading — NOW
 
-Updated: 2026-08-11
+Updated: 2026-08-12
 
 ## Workspace
 
 Threading is an Agent-native, evidence-led Research and Design project workflow. Its reusable core was extracted from a private academic workspace and is intended for projects with different contexts but similar needs around research organisation, evidence traceability, methods, design iteration and writing. An independent GSA Pack is available as an optional Design Innovation academic context.
 
-Current status: **v0.2 Managed Workspace implementation with an installable
-Threading skill, Current State, linked GSA Pack, existing-chat reconciliation
-and safe update/migration tools**.
+Current working Core: **v0.3.0**.
 
-Public release: **v0.2.0** — [GitHub release](https://github.com/51younglowkey/Threading/releases/tag/v0.2.0)
+Current status: **v0.3 Managed Workspace implementation with an automatically registered
+Threading Skill, Current State, linked GSA Pack, existing-chat reconciliation,
+non-destructive compatibility upgrades and safe migration tools**.
+
+Public release: **v0.3.0** — [GitHub release](https://github.com/51younglowkey/Threading/releases/tag/v0.3.0)
 
 Release decision (2026-08-11): the owner chose a public GitHub repository. Users
 will view, clone or download Threading without collaborator access; changes should
@@ -22,11 +24,12 @@ optional tool, not a core onboarding dependency.
 ```text
 Threading
 ├── system rules and repository boundaries
-├── installable natural-language Threading skill
+├── automatically registered natural-language Threading Skill
 ├── linked read-only GSA Pack with methods, reflection-document analysis and Stage 3 assessment guidance
 ├── evidence, reading, interview and prototype templates
 ├── complete Git-ignored Managed Workspaces under projects/local/
 ├── Current State, Figma evolution and chat reconciliation routes
+├── compatibility upgrade reports and legacy-trace connection
 ├── Agent-native text Dashboard and existing-project adoption
 └── bounded indexing and file utilities
 ```
@@ -46,7 +49,7 @@ Threading
 - `docs/QUICKSTART.md` — first-use route
 - `profiles/_template/` — legacy v0.1 profile scaffold (migration only)
 - `projects/_template/` — full Managed Workspace scaffold
-- `skills/threading/` — standalone installable natural-language skill
+- `skills/threading/` — shared Skill source registered for Codex and Claude Code
 - `90_scripts_tools/project_workspace/` — adoption, Dashboard, pack, chat and migration tools
 - `90_scripts_tools/threading/` — install, update and doctor tools
 
